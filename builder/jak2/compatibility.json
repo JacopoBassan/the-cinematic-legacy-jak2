@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "game": "jak2",
+  "version": "0.3.0-rc.1",
+  "openGoalVersion": "v0.3.9",
+  "platform": "windows-x64",
+  "supportedSerials": [
+    "SCES-51608",
+    "SCUS-97265"
+  ],
+  "tools": {
+    "extractor.exe": "bc2d0718894c48f63e6bfcfe2535cf96401542286b1572aa1dbf4a90ff8f5cc9",
+    "goalc.exe": "8d877457c13349f43a8fe5a8622e319622de42e0ce4731f3b32e6a732600e28e",
+    "gk.exe": "ae8a107d6ecaaa7e83948b5c9c01fabf43a0117fd82a3305ae084114c54da45d"
+  },
+  "inputs": {},
+  "source": {},
+  "fr3Inputs": {
+    "out/jak2/fr3/atollext.fr3": {
+      "firstModel": "sig-lod0",
+      "sha256": "d34d92eeb656e3f46ee97f461c77c69427cfab2ffee87d607f901eb6172a456e"
+    },
+    "out/jak2/fr3/ctyasha.fr3": {
+      "firstModel": "daxter-highres-lod0",
+      "sha256": "4a3ba7cd8136b478346a8f17582352292fe5d929bf01415fd9900eb94973b705"
+    },
+    "out/jak2/fr3/GAME.fr3": {
+      "firstModel": "collectables-bomb-blast-lod0",
+      "sha256": "4aba224d2b73249834476b2c25f5cfdf1ef4f6f0e9bdf33feb410e5c76654e69"
+    },
+    "out/jak2/fr3/stadblmp.fr3": {
+      "firstModel": "youngsamos-highres-lod0",
+      "sha256": "b2eab602c7dee0967166e5e2e16f8de4406d8942c15594a27d3c96297c085b68"
+    },
+    "out/jak2/fr3/underb.fr3": {
+      "firstModel": "sig-lod0",
+      "sha256": "0e77407ae9a8ac6d23358bfa5384ee41ff3e47033dd20ba139087c59d4f93371"
+    }
+  },
+  "sourceTrees": {
+    "goal_src": {
+      "files": 4050,
+      "sha256": "fd605b6d4e8b6d789eb363769df8491f8a2fb1f8737cb1f37c2cd63dc88ca476"
+    },
+    "decompiler": {
+      "files": 83,
+      "sha256": "74d4f8ae46de5be70f7e5a67b162f849558f44cba919812dde3ef4fc49cbbc98"
+    },
+    "game": {
+      "files": 358,
+      "sha256": "6fa623babf949890351c2de732e912e185e6cdcb9df13c460f09763efa970ede"
+    }
+  },
+  "payloadPaths": [
+    "data/out/jak2/fr3/GAME.fr3",
+    "data/out/jak2/fr3/atollext.fr3",
+    "data/out/jak2/fr3/underb.fr3",
+    "data/out/jak2/fr3/ctyasha.fr3",
+    "data/out/jak2/fr3/stadblmp.fr3",
+    "data/out/jak2/iso/GAME.CGO"
+  ],
+  "regionalProfiles": {
+    "SCES-51608": {
+      "discRevision": "PAL",
+      "inputs": {
+        "iso_data/jak2/CGO/KERNEL.CGO": "0daea2a4859dbe67c2561879ea5789214b5ca6134b883e0ec93f3b81a173ed63",
+        "iso_data/jak2/CGO/GAME.CGO": "02d3e120d19fb8558771e101b3a2f4453ad8264d9b80ec560bd6cd1c6a0d6f79",
+        "iso_data/jak2/CGO/COMMON.CGO": "978afd811c60b60ecef008c44e5e9ec84a082bdc1f0e1993e8979daf7487b375",
+        "iso_data/jak2/DGO/HIPHOG.DGO": "459e67a2adcbea3586522f0cd001594ac89a135c6ee09a6ddc53d5d4ca0b0e0b",
+        "iso_data/jak2/DGO/ATE.DGO": "a018decf705fe46444061db8036638abff63c3b9328522ae36b7ef43dd67b5e6",
+        "iso_data/jak2/DGO/UNB.DGO": "2d68d597ac780c77e5150cfd4bd36f736772b92f4f15f75c66e8375e99255fef",
+        "iso_data/jak2/DGO/CTYASHA.DGO": "6764a12d0fade649bdfb636ca36ac35ea3ea46fad17130147806fef5ec5027f7",
+        "iso_data/jak2/DGO/STADBLMP.DGO": "4790e236af433e9c2d8ebd35efe5804a1f9c0acc019bdf66cd9076822854cc90",
+        "iso_data/jak2/DGO/GARAGE.DGO": "735ea13a0a144263f10f339a119f132d3430521acd7e6d7a800cb8e3581a5fba",
+        "iso_data/jak2/DGO/LINTCSTB.DGO": "89250cd42d9187e32b91c36b6275e06cb2101e66fdf883549f65589f6832ae4f",
+        "iso_data/jak2/SCES_516.08": "81f3c37d0ce70245794bf441bb0c01841ac4036e2877532b9213575c855a6d92",
+        "iso_data/jak2/SYSTEM.CNF": "1bc906a2d51e2e036c7377e8147bc70854874ecc01de5296eea1c8a3da816465",
+        "out/jak2/iso/GAME.CGO": "09e628c79f0c5ee8d4a45c7720a98d8e34388675e44ca9d13bd102c75b69bcff"
+      },
+      "validation": "Official OpenGOAL v0.3.9 full native extraction, territory-correct GAME compile, complete public-source portable conversion, six-model controls and exact native RGBA/indexed-context validation passed. PAL model/control components match the USA output; separate PAL live smoke not claimed.",
+      "elfHash": 18188891052467821088,
+      "territory": 1
+    },
+    "SCUS-97265": {
+      "discRevision": "NTSC-U v2.01",
+      "inputs": {
+        "iso_data/jak2/CGO/KERNEL.CGO": "0daea2a4859dbe67c2561879ea5789214b5ca6134b883e0ec93f3b81a173ed63",
+        "iso_data/jak2/CGO/GAME.CGO": "590e77160a55fc69a988f6edbb275af2fa5fb18f2fbdb9a5202eae942ad99d2e",
+        "iso_data/jak2/CGO/COMMON.CGO": "978afd811c60b60ecef008c44e5e9ec84a082bdc1f0e1993e8979daf7487b375",
+        "iso_data/jak2/DGO/HIPHOG.DGO": "459e67a2adcbea3586522f0cd001594ac89a135c6ee09a6ddc53d5d4ca0b0e0b",
+        "iso_data/jak2/DGO/ATE.DGO": "a018decf705fe46444061db8036638abff63c3b9328522ae36b7ef43dd67b5e6",
+        "iso_data/jak2/DGO/UNB.DGO": "2d68d597ac780c77e5150cfd4bd36f736772b92f4f15f75c66e8375e99255fef",
+        "iso_data/jak2/DGO/CTYASHA.DGO": "6764a12d0fade649bdfb636ca36ac35ea3ea46fad17130147806fef5ec5027f7",
+        "iso_data/jak2/DGO/STADBLMP.DGO": "4790e236af433e9c2d8ebd35efe5804a1f9c0acc019bdf66cd9076822854cc90",
+        "iso_data/jak2/DGO/GARAGE.DGO": "735ea13a0a144263f10f339a119f132d3430521acd7e6d7a800cb8e3581a5fba",
+        "iso_data/jak2/DGO/LINTCSTB.DGO": "89250cd42d9187e32b91c36b6275e06cb2101e66fdf883549f65589f6832ae4f",
+        "iso_data/jak2/SCUS_972.65": "fbb80af1e2328629ca66ff21785e59bf7fec34b165b4ff659aff20fa45de7b66",
+        "iso_data/jak2/SYSTEM.CNF": "05d93668e717d83b08b930a92cf763646c711342152c0b09346f1054797c2666",
+        "out/jak2/iso/GAME.CGO": "0cbde73cbb3626fc02466dec1855c29688fd6dff11902f1fba9a16ee516f79bc"
+      },
+      "validation": "Official OpenGOAL v0.3.9 full native extraction, territory-correct GAME compile, complete public-source portable conversion, six-model controls and exact native RGBA/indexed-context validation passed. Fresh official v0.3.9 bounded player boot, native movement/blink and visible Dark-horn smoke passed; no campaign or hosted launcher UI claim.",
+      "elfHash": 18445016742498932084,
+      "territory": 0,
+      "fr3Inputs": {}
+    }
+  },
+  "minimumFreeBytes": 2147483648
+}

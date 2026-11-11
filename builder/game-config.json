@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "game": "jak2",
+  "displayName": "Jak II: The Cinematic Legacy",
+  "modName": "jak2-cinematic-models-windows-x64",
+  "builderModule": "jak2.build_release",
+  "compatibilityFile": "jak2/compatibility.json",
+  "runtimeFolders": [
+    "out/jak2/fr3",
+    "out/jak2/iso",
+    "game",
+    "goal_src",
+    "decompiler",
+    "custom_assets"
+  ],
+  "thumbnail": "artwork/jak2.png",
+  "installGuide": "LAUNCHER-INSTALL.txt",
+  "description": "Cinematic character models in Jak II gameplay"
+}

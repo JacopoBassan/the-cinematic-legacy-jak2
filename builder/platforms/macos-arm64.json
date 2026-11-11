@@ -1,0 +1,78 @@
+{
+  "platform": "macos-arm64",
+  "openGoalVersion": "v0.3.9",
+  "tools": {
+    "extractor": "02010ae4c2f93dec74b83d03804acc837d56164ebbc0ca3d315498d0d1834534",
+    "goalc": "2be27d36f794db4b9b6fc5aa7443c65b2ae976d7e4eedca58ed3445b842cc0bc",
+    "gk": "b006df0159c7eb2f91f2b57df9b204c495cd084f33cb8cb1619ff54f1a090621"
+  },
+  "gameProfiles": {
+    "jak2": {
+      "SCES-51608": {
+        "elfHash": 18188891052467821088,
+        "inputs": {
+          "out/jak2/iso/GAME.CGO": "a31ebdcff39b35009c5dabe1702ea44f516ea37500da1d20cc672fbce2d8c57b"
+        },
+        "fr3Inputs": {
+          "out/jak2/fr3/atollext.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "92bcc29c3c373c88cded0fe41b083a672734eb5f520e16f54326e9853d254771"
+          },
+          "out/jak2/fr3/ctyasha.fr3": {
+            "firstModel": "daxter-highres-lod0",
+            "sha256": "7f4878abb923013ce00798cd0b11812337dbd076d856ccb98d764fa764ba8e21"
+          },
+          "out/jak2/fr3/GAME.fr3": {
+            "firstModel": "collectables-bomb-blast-lod0",
+            "sha256": "5cda0ffb31f9c84c2f2c2c99b88e4c2a1235a0303e2dccc8f4f94c56054d2b8c"
+          },
+          "out/jak2/fr3/stadblmp.fr3": {
+            "firstModel": "youngsamos-highres-lod0",
+            "sha256": "ed994b0bece99c986dbb991ef704b0b86e461a61eaf3231dfb2cc9b758294b4e"
+          },
+          "out/jak2/fr3/underb.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "55bb608d8cffd2359c590fcc1fd26d6909d6e7debd56868ed26c9a014f4b412b"
+          }
+        }
+      },
+      "SCUS-97265": {
+        "inputs": {
+          "out/jak2/iso/GAME.CGO": "89314ab5d1c55fc34a60675eb85883f96c1487024f6399e23bd9b59b41d10410"
+        },
+        "elfHash": 18445016742498932084,
+        "fr3Inputs": {
+          "out/jak2/fr3/atollext.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "92bcc29c3c373c88cded0fe41b083a672734eb5f520e16f54326e9853d254771"
+          },
+          "out/jak2/fr3/ctyasha.fr3": {
+            "firstModel": "daxter-highres-lod0",
+            "sha256": "7f4878abb923013ce00798cd0b11812337dbd076d856ccb98d764fa764ba8e21"
+          },
+          "out/jak2/fr3/GAME.fr3": {
+            "firstModel": "collectables-bomb-blast-lod0",
+            "sha256": "5cda0ffb31f9c84c2f2c2c99b88e4c2a1235a0303e2dccc8f4f94c56054d2b8c"
+          },
+          "out/jak2/fr3/stadblmp.fr3": {
+            "firstModel": "youngsamos-highres-lod0",
+            "sha256": "ed994b0bece99c986dbb991ef704b0b86e461a61eaf3231dfb2cc9b758294b4e"
+          },
+          "out/jak2/fr3/underb.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "55bb608d8cffd2359c590fcc1fd26d6909d6e7debd56868ed26c9a014f4b412b"
+          }
+        }
+      }
+    }
+  },
+  "toolArchive": {
+    "url": "https://github.com/open-goal/jak-project/releases/download/v0.3.9/opengoal-macos-arm-v0.3.9.tar.gz",
+    "sha256": "613d7b2b2171fd1840c71b2928e1352ee1b5f2ec8df5a4ec76c1bfe91b926d42"
+  },
+  "pythonRuntime": {
+    "version": "3.11.18",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.11.18%2B20261026-aarch64-apple-darwin-install_only_stripped.tar.gz",
+    "sha256": "f3e1cd83a7f1d70e58b0d69102c18bd6867d2f973068dc5cbfd5822e445c66df"
+  }
+}
