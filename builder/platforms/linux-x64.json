@@ -1,0 +1,81 @@
+{
+  "platform": "linux-x64",
+  "openGoalVersion": "v0.3.9",
+  "tools": {
+    "extractor": "9c3ed1520ada1f505a63227fbdced5fe57394301a58e4f375968010533054299",
+    "goalc": "2537523db5c5fac4c47dd97ea34f54c795d95bdfad0439a584844b2e1254ba42",
+    "gk": "dde06494a3c707f2d30adbe8394e1e76bc157b2096700b8bb6b010f2eaf24a13"
+  },
+  "toolArchive": {
+    "url": "https://github.com/open-goal/jak-project/releases/download/v0.3.9/opengoal-linux-v0.3.9.tar.gz",
+    "sha256": "acacd03896e09902503fee2ac98e8cb72228cfd221d8ff96b3e88a98ada04ee1"
+  },
+  "pythonRuntime": {
+    "version": "3.11.18",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.11.18%2B20261026-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+    "sha256": "17c4978a36c496dc53c08899ef8dad1ad2734f6325f08d6033a1e66419e0af26"
+  },
+  "validationStatus": "Linux x64 original input extraction and native archive fingerprints verified for the supported EU and USA revisions; cinematic conversion and gameplay are not validated",
+  "gameProfiles": {
+    "jak2": {
+      "SCES-51608": {
+        "elfHash": 18188891052467821088,
+        "validation": "Official v0.3.9 Linux x64 original input extraction and required native archive compile passed; cinematic conversion and in-game behavior are not validated",
+        "inputs": {
+          "out/jak2/iso/GAME.CGO": "a8c829303340a1c572252e408f0730e2495d84505cdfcd94b3e34167fd9a6ad8"
+        },
+        "fr3Inputs": {
+          "out/jak2/fr3/atollext.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "d34d92eeb656e3f46ee97f461c77c69427cfab2ffee87d607f901eb6172a456e"
+          },
+          "out/jak2/fr3/ctyasha.fr3": {
+            "firstModel": "daxter-highres-lod0",
+            "sha256": "4a3ba7cd8136b478346a8f17582352292fe5d929bf01415fd9900eb94973b705"
+          },
+          "out/jak2/fr3/GAME.fr3": {
+            "firstModel": "collectables-bomb-blast-lod0",
+            "sha256": "4aba224d2b73249834476b2c25f5cfdf1ef4f6f0e9bdf33feb410e5c76654e69"
+          },
+          "out/jak2/fr3/stadblmp.fr3": {
+            "firstModel": "youngsamos-highres-lod0",
+            "sha256": "b2eab602c7dee0967166e5e2e16f8de4406d8942c15594a27d3c96297c085b68"
+          },
+          "out/jak2/fr3/underb.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "0e77407ae9a8ac6d23358bfa5384ee41ff3e47033dd20ba139087c59d4f93371"
+          }
+        }
+      },
+      "SCUS-97265": {
+        "elfHash": 18445016742498932084,
+        "validation": "Official v0.3.9 Linux x64 original input extraction and required native archive compile passed; cinematic conversion and in-game behavior are not validated",
+        "inputs": {
+          "out/jak2/iso/GAME.CGO": "6a673c9cf1e7aee115e82be459b1348fd1981fef49086569aae67a2a64c4cc14"
+        },
+        "fr3Inputs": {
+          "out/jak2/fr3/atollext.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "d34d92eeb656e3f46ee97f461c77c69427cfab2ffee87d607f901eb6172a456e"
+          },
+          "out/jak2/fr3/ctyasha.fr3": {
+            "firstModel": "daxter-highres-lod0",
+            "sha256": "4a3ba7cd8136b478346a8f17582352292fe5d929bf01415fd9900eb94973b705"
+          },
+          "out/jak2/fr3/GAME.fr3": {
+            "firstModel": "collectables-bomb-blast-lod0",
+            "sha256": "4aba224d2b73249834476b2c25f5cfdf1ef4f6f0e9bdf33feb410e5c76654e69"
+          },
+          "out/jak2/fr3/stadblmp.fr3": {
+            "firstModel": "youngsamos-highres-lod0",
+            "sha256": "b2eab602c7dee0967166e5e2e16f8de4406d8942c15594a27d3c96297c085b68"
+          },
+          "out/jak2/fr3/underb.fr3": {
+            "firstModel": "sig-lod0",
+            "sha256": "0e77407ae9a8ac6d23358bfa5384ee41ff3e47033dd20ba139087c59d4f93371"
+          }
+        }
+      }
+    }
+  }
+}
