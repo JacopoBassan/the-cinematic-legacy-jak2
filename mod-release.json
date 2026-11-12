@@ -4,6 +4,6 @@
   "displayName": "Jak II: The Cinematic Legacy",
   "description": "Cinematic character models in Jak II gameplay",
   "repository": "JacopoBassan/the-cinematic-legacy-jak2",
-  "version": "0.3.0-rc.1",
+  "version": "0.3.0",
   "openGoalVersion": "v0.3.9"
 }

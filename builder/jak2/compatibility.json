@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "game": "jak2",
-  "version": "0.3.0-rc.1",
+  "version": "0.3.0",
   "openGoalVersion": "v0.3.9",
   "platform": "windows-x64",
   "supportedSerials": [

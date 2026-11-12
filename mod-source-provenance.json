@@ -31,7 +31,7 @@
     "jak2/build_release.py": "0ad6ccdb954256f2716a3c06ebc39eb96d31846ca1edfe3e3bd5507caa49c9db",
     "jak2/build_samos_keira.py": "97603510a7682fa7d21c28d104213292a7fa49333297ef820d2daf0943ed43f1",
     "jak2/cinematic_eyes.py": "2065b40a60a5df02f77e5b97ecbd260e9683c4171fdece82bf61d4380349dcc9",
-    "jak2/compatibility.json": "8a762f3c63dd2846aeba656ee11a2b8715d10e70dc7e6edcacf2a3a86a2f439c",
+    "jak2/compatibility.json": "1c3d237f2ecb1b798ceccefcce5e8b887692f40c15cf4885a3204b1524364167",
     "jak2/eye_alignment.py": "cf42cc2774f0e5885b05b6db64e77ec062046caccddc4d4ad3f7523aabc38787",
     "jak2/fit_faces.py": "eaa6f7354582ad0b75eda1935131bc246755b717324c46c6890b2fe4427c47bb",
     "jak2/fit_npc_faces.py": "245a1a9ee2720dfdafd99383a4b5a9f877a60406fb59158de778de011a660570",
