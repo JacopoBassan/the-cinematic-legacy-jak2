@@ -8,51 +8,53 @@ Original left, Cinematic right. In-game screenshots.
 
 **Front**
 
-![Jak & Daxter, Front: Original left, Cinematic right](jak2/jak-front.jpg)
+![Jak & Daxter, Front: Original left, Cinematic right](jak2/jak-front.webp)
 
 **Left**
 
-![Jak & Daxter, Left: Original left, Cinematic right](jak2/jak-left.jpg)
+![Jak & Daxter, Left: Original left, Cinematic right](jak2/jak-left.webp)
 
 **Right**
 
-![Jak & Daxter, Right: Original left, Cinematic right](jak2/jak-right.jpg)
+![Jak & Daxter, Right: Original left, Cinematic right](jak2/jak-right.webp)
 
 **Back**
 
-![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.jpg)
+![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.webp)
 
 ## Dark Jak & Daxter
 
+Dark Jak keeps his original gameplay horns.
+
 **Front**
 
-![Dark Jak & Daxter, Front: Original left, Cinematic right](jak2/darkjak-front.jpg)
+![Dark Jak & Daxter, Front: Original left, Cinematic right](jak2/darkjak-front.webp)
 
 **Left**
 
-![Dark Jak & Daxter, Left: Original left, Cinematic right](jak2/darkjak-left.jpg)
+![Dark Jak & Daxter, Left: Original left, Cinematic right](jak2/darkjak-left.webp)
 
 **Right**
 
-![Dark Jak & Daxter, Right: Original left, Cinematic right](jak2/darkjak-right.jpg)
+![Dark Jak & Daxter, Right: Original left, Cinematic right](jak2/darkjak-right.webp)
 
 **Back**
 
-![Dark Jak & Daxter, Back: Original left, Cinematic right](jak2/darkjak-back.jpg)
+![Dark Jak & Daxter, Back: Original left, Cinematic right](jak2/darkjak-back.webp)
 
 ## Sig
 
 **Front**
 
-![Sig, Front: Original left, Cinematic right](jak2/sig-front.jpg)
+![Sig, Front: Original left, Cinematic right](jak2/sig-front.webp)
 
 **Right**
 
-![Sig, Right: Original left, Cinematic right](jak2/sig-right.jpg)
+![Sig, Right: Original left, Cinematic right](jak2/sig-right.webp)
 
 **Back**
 
-![Sig, Back: Original left, Cinematic right](jak2/sig-back.jpg)
+![Sig, Back: Original left, Cinematic right](jak2/sig-back.webp)
 
 ## Ashelin
 
@@ -68,19 +70,19 @@ Original left, Cinematic right. In-game screenshots.
 
 **Front**
 
-![Samos, Front: Original left, Cinematic right](jak2/samos-front.jpg)
+![Samos, Front: Original left, Cinematic right](jak2/samos-front.webp)
 
 **Left**
 
-![Samos, Left: Original left, Cinematic right](jak2/samos-left.jpg)
+![Samos, Left: Original left, Cinematic right](jak2/samos-left.webp)
 
 **Right**
 
-![Samos, Right: Original left, Cinematic right](jak2/samos-right.jpg)
+![Samos, Right: Original left, Cinematic right](jak2/samos-right.webp)
 
 **Back**
 
-![Samos, Back: Original left, Cinematic right](jak2/samos-back.jpg)
+![Samos, Back: Original left, Cinematic right](jak2/samos-back.webp)
 
 ## Keira
 

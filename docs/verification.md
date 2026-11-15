@@ -1,12 +1,14 @@
 # Jak II verification
 
-Release `0.3.0` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+Release `0.3.1` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
 
-## Current source checks, 2026-11-11
+## Source checks
 
-The game-specific suite completed 66 tests on Apple Silicon: 62 passed and four Windows-only cases were skipped. Twelve portable filesystem fixtures also passed on this Mac. All 13 Windows filesystem fixtures remain configured for native Windows checks.
+On 2026-11-11, the game-specific suite completed 66 tests on Apple Silicon: 62 passed and four Windows-only cases were skipped. Twelve portable filesystem fixtures also passed on this Mac.
 
-Coverage includes wrong-game inputs, corrupt packages, source inventories, staged writes, rollback, interrupted transactions, hardlinks and lock ownership. Native Windows junction, path and child-process checks require the Windows run. These source checks are separate from player testing.
+On Windows, all 66 tests and 13 installer filesystem checks passed on 2026-11-15.
+
+Coverage includes wrong-game inputs, corrupt packages, source inventories, staged writes, rollback, interrupted transactions, hardlinks and lock ownership. The Windows checks also cover junctions, paths and child-process cleanup. These source checks are separate from player testing.
 
 [`builder/source-files.json`](../builder/source-files.json) separates the complete `sourceFiles` developer ZIP from the smaller `runtimeFiles` installer source set. Package checks verify each manifest against its own file set. They also check pinned dependencies, runtime versions, Windows adapter provenance and Mac/Linux executable modes. Game models and textures are excluded from distributable source and installer archives.
 
@@ -26,6 +28,8 @@ Release assembly passed with both builder and standard archive names. Checks cov
 
 The builder produces replacements for Jak, Daxter, Sig, Ashelin, stadium Samos and stadium Keira. Checks cover eye routing, horn transitions, morphs and texture context. The five graphics outputs retain the 233 native indexed textures. Unrelated models and regional archive objects are checked for preservation.
 
+Jak, Sig and Samos use native upper shadow-volume clipping to prevent their gameplay shadow proxies from cutting through the cinematic models. EU v0.3.9 checks covered normal and Dark Jak, Sig and Samos from multiple angles, with ground shadows retained. The correction changes no geometry, textures, materials or animation controls.
+
 The builder checks original tools, disc revisions and consumed assets before conversion. It validates the generated model data and records payload checksums. Earlier conversions covered the supported EU and USA profiles.
 
 ## Historical player coverage
@@ -39,7 +43,7 @@ These checks were recorded before the 2026-11-11 repository split.
 
 The [gallery](comparisons/jak2.md) contains 19 matched comparisons for Jak II. Lossless compression checks preserved the decoded RGB pixels and image dimensions. The [comparison manifest](comparisons/manifest.json) records file hashes and capture details.
 
-Before-and-after images, including launcher thumbnails, must use unchanged screenshot pixels. Only cropping, placement and lossless compression are allowed. Do not use image generation, redraw details, retouch colours or upscale captures. Thumbnail source hashes and crop rectangles are recorded in [`mod-source-provenance.json`](../mod-source-provenance.json).
+Before-and-after images, including launcher thumbnails, must use unchanged screenshot pixels. Only cropping, placement and lossless compression are allowed. Do not use image generation, redraw details, retouch colors or upscale captures. Thumbnail source hashes and crop rectangles are recorded in [`mod-source-provenance.json`](../mod-source-provenance.json).
 
 ## Limits
 

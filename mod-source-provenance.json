@@ -15,7 +15,7 @@
     "LauncherExtractor.cs": "baed2a1f3f4e6b112619943fa5dcc933dc6061f27dffa54ce0ac04f2045b3cb0",
     "LauncherExtractor.sh": "982885617e5c23f57256cae9184a7c19c19f18f2c0c48cb16b7a99ea35e06f05",
     "README.md": "cc93d3e8702439fb4bf439970eaa254209c4bca63fc45e1a4508fb7641e3fedd",
-    "artwork/jak2.png": "f19b337b83e2f02688cbd505e445d01d94ac94716fbcdb6b282dab26d11f655f",
+    "artwork/jak2.png": "30ae19c95be92b902bfd469bc0bb7190a85d0fa4a3355d4391706b2f967b4dff",
     "fr3_fingerprint.py": "1266fc7b477efddcbc947e24de44a5a1cfc3b789409e45c295107495d301f556",
     "game-config.json": "c4ba5ad57901833f84df9cdd55d38da8b3ae35a27bdbc0f205bb08b5499e8e93",
     "game-configs/jak2.json": "c4ba5ad57901833f84df9cdd55d38da8b3ae35a27bdbc0f205bb08b5499e8e93",
@@ -31,7 +31,7 @@
     "jak2/build_release.py": "0ad6ccdb954256f2716a3c06ebc39eb96d31846ca1edfe3e3bd5507caa49c9db",
     "jak2/build_samos_keira.py": "97603510a7682fa7d21c28d104213292a7fa49333297ef820d2daf0943ed43f1",
     "jak2/cinematic_eyes.py": "2065b40a60a5df02f77e5b97ecbd260e9683c4171fdece82bf61d4380349dcc9",
-    "jak2/compatibility.json": "1c3d237f2ecb1b798ceccefcce5e8b887692f40c15cf4885a3204b1524364167",
+    "jak2/compatibility.json": "5102af84aed3d87b3fba45fe0c07b3322af08f73c14c1bf37ab58405d649763a",
     "jak2/eye_alignment.py": "cf42cc2774f0e5885b05b6db64e77ec062046caccddc4d4ad3f7523aabc38787",
     "jak2/fit_faces.py": "eaa6f7354582ad0b75eda1935131bc246755b717324c46c6890b2fe4427c47bb",
     "jak2/fit_npc_faces.py": "245a1a9ee2720dfdafd99383a4b5a9f877a60406fb59158de778de011a660570",
@@ -41,7 +41,7 @@
     "jak2/native_horns.py": "06938ce7f0e6d787db3c9e372a116473e99447e99e94ae85a7404596772a0feb",
     "jak2/npc_materials.py": "bc1e88a32806be2ba599c64d7fa43374c40e127c978a0e8f8ed8d2dd4cf9b9c8",
     "jak2/patch_archive.py": "264e3422f2ffd2edae9020aa02233363751b8c3b8404a263c9bd7193b264c798",
-    "jak2/patch_runtime.py": "a96dcda0c2d03f32fc91b66922201b4c35aa6d9b8b6cb55a688648b231615549",
+    "jak2/patch_runtime.py": "4b1c72ea386d6ce6c5b7a110f9d7d4f3b8467a40c7d55ab8df0baec4c488cf32",
     "jak2/restore_context.py": "fbff54986a2a88a5de7caf39f6a5b30e50b2830e78057580399b66372386e615",
     "jak2/restore_materials.py": "45f2d98fd38747137b8f5a988eb9c77866d4feeee4281854ea673e474aa5a5c4",
     "jak2/restore_textures.py": "667864385bf9bbee81047e71ffe8976e7c570aa3ad7d86adc33882aef789da91",
@@ -53,7 +53,7 @@
     "jak2/stage_npcs.py": "538fc58375a84a17a49c396177a51b2193947a7c2d6c1b17041df8e593d54deb",
     "jak2/transformations.py": "03e92340a5c47150d696fbb03f2d56b4cc192fd154ed1de243fb82e52fcd4f0f",
     "jak2/validate_payload.py": "8967fb5c56349e1ca2e08e89fd720afd97c15b8e8f68954926d2d6d8070e1584",
-    "launcher_install.py": "61600a252cd012aa7113782ee7714554d6ed94f171cc5516c54631489014dbdd",
+    "launcher_install.py": "2e1a40c05aee3fea2948a15b34dc1993c7f59493f8420ae02545d161be6b8965",
     "licenses/OpenGOAL-ISC.txt": "64983c21481eeab85e9df874e4b452bf6df9005bb5f422fb154705a9931ece56",
     "native_io.py": "14fea6e0ebfc4401e27b5899afdb585c2d32ac50768c086c01529ee31414770c",
     "package_launcher.py": "7c4c6d1b62423acf05fcc5bb9d4dc5926041fadda5e336314700baea5c182ce3",
@@ -75,7 +75,7 @@
     "stages/npc_builder.py": "cb4b72aef6bbfe199e7eee6c4af8a77e28cc103b47ba4ac0c55af6c3ace1111e"
   },
   "artwork": {
-    "sha256": "f19b337b83e2f02688cbd505e445d01d94ac94716fbcdb6b282dab26d11f655f",
+    "sha256": "30ae19c95be92b902bfd469bc0bb7190a85d0fa4a3355d4391706b2f967b4dff",
     "dimensions": [
       1024,
       576
@@ -87,8 +87,8 @@
       646
     ],
     "captureHashes": {
-      "original": "57db27420e219d0ad91afe50adbee4fdc95a737b9ee7b6e190e32bde44410ea0",
-      "cinematic": "d8dcbfeac5b90c4a398e9e96c249c8c2ab955dfde0120118b76afffb726684b3"
+      "original": "e9a9116a6a877e224054f3ddd7913a4a4aac2bec4c756e1a41ebe7cb182b271f",
+      "cinematic": "aef29f479af74cfbdfbb8d752f3489064170b8d76836dace9ccd25597406fdf7"
     },
     "panelsMatchSourcePixelsExactly": true,
     "method": "Direct screenshot crops and placement; lossless PNG",

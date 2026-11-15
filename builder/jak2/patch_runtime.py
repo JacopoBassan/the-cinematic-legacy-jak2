@@ -30,6 +30,32 @@ def patch(source):
         nonlocal s
         if s.count(old)!=1:raise ValueError(f'Unsupported source anchor: {old[:80]} ({s.count(old)})')
         s=s.replace(old,new,1)
+    # Keep native ground shadows while excluding upper-body proxy volumes
+    # that intersect the cinematic replacements.
+    header='(defun foreground-shadow ((draw-ctrl draw-control) (arg1 (inline-array pris-mtx)) (arg2 pointer))'
+    replace(header, '(define *cinematic-jak-shadow-clip* #t)\n(define *cinematic-sig-shadow-clip* #t)\n(define *cinematic-samos-shadow-clip* #t)\n\n'+header)
+    for packet in ('shadow-pack1', 'shadow-pack2'):
+        anchor=('                   ' if packet=='shadow-pack1' else '                        ')+f'(set! (-> {packet} geo-ref dma)'
+        clipping=f'''                    (when (and *cinematic-jak-shadow-clip*
+                               (string= (-> draw-ctrl mgeo name) "jakb-lod0")
+                               (string= (-> shadow-geo name) "jakb-shadow"))
+                      (logior! (-> {packet} settings flags) (shadow-flags shdf03)))
+                    (when (and *cinematic-sig-shadow-clip*
+                               (string= (-> draw-ctrl mgeo name) "sig-lod0")
+                               (string= (-> shadow-geo name) "sig-shadow")
+                               (not (logtest? (-> {packet} settings flags) (shadow-flags shdf02))))
+                      (logior! (-> {packet} settings flags) (shadow-flags shdf03)))
+                    (when (and *cinematic-samos-shadow-clip*
+                               (string= (-> draw-ctrl mgeo name) "samos-lod0")
+                               (string= (-> shadow-geo name) "samos-shadow")
+                               (not (logtest? (-> {packet} settings flags) (shadow-flags shdf02))))
+                      ;; Keep the contact shadow below a root-relative plane.
+                      (set! (-> {packet} settings top-plane w)
+                        (- (- (-> {packet} settings center y)
+                              (-> draw-ctrl skeleton bones 0 transform trans y)) 128.0))
+                      (logior! (-> {packet} settings flags) (shadow-flags shdf03)))
+'''
+        replace(anchor, clipping+anchor)
     predicate='(or '+' '.join('(string= (-> dc mgeo name) "'+n+'")' for n in EFFECTS)+')'
     count='(cond '+' '.join('((string= (-> dc mgeo name) "'+n+'") '+str(len(m))+')' for n,m in EFFECTS.items())+' (else (-> merc-ctrl header effect-count)))'
     replace('(qwc-total 0))','(qwc-total 0) (cinematic-replacement? '+predicate+'))')
