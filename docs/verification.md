@@ -1,6 +1,6 @@
 # Jak II verification
 
-Release `0.3.1` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+Release `0.3.3` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
 
 ## Source checks
 
@@ -32,7 +32,7 @@ The builder produces replacements for Jak, Daxter, Sig, Ashelin, stadium Samos a
 
 Jak, Sig and Samos use native upper shadow-volume clipping to prevent their gameplay shadow proxies from cutting through the cinematic models. EU v0.3.9 checks covered normal and Dark Jak, Sig and Samos from multiple angles, with ground shadows retained. The correction changes no geometry, textures, materials or animation controls.
 
-The builder checks original tools, disc revisions and consumed assets before conversion. It validates the generated model data and records payload checksums. Earlier conversions covered the supported EU and USA profiles.
+The builder uses OpenGOAL’s `buildinfo.json` to select the disc revision. For older extractions, it reads the `BOOT2` entry in `SYSTEM.CNF`. It checks the original tools, selected executable and required archives before conversion. It validates the generated model data and records payload checksums. Earlier conversions covered the supported EU and USA profiles.
 
 ## Historical player coverage
 

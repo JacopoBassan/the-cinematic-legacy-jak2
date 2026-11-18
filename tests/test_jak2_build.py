@@ -128,6 +128,14 @@ class PortableBuildTests(unittest.TestCase):
         self.assertEqual(result['selectedSerial'], 'SCES-51608')
         self.assertEqual(before, {p: p.read_bytes() for p in self.data.rglob('*') if p.is_file()})
 
+    def test_public_profiles_leave_boot_config_out_of_exact_file_checks(self):
+        published = json.loads((builder.HERE / 'compatibility.json').read_text())
+        for profile in published['regionalProfiles'].values():
+            with self.subTest(profile=profile['discRevision']):
+                self.assertNotIn('iso_data/jak2/SYSTEM.CNF', profile['inputs'])
+                self.assertTrue(any(name.startswith(('iso_data/jak2/SCUS_', 'iso_data/jak2/SCES_'))
+                                    for name in profile['inputs']))
+
     def test_modified_disc_and_tools_are_rejected(self):
         (self.disc / 'GAME.CGO').write_bytes(b'wrong-revision')
         with self.assertRaisesRegex(ValueError, 'Unsupported or modified'):
@@ -145,7 +153,7 @@ class PortableBuildTests(unittest.TestCase):
 
     def test_verified_folder_can_select_usa_profile_without_metadata(self):
         (self.disc / 'buildinfo.json').unlink()
-        (self.disc / 'SYSTEM.CNF').write_text('BOOT2 = cdrom0:\\SCUS_972.65;1\n')
+        (self.disc / 'SYSTEM.CNF').write_bytes(b'comment = SCES_516.08\r\n\tboot2 = cdrom0:\\scus_972.65;1 \r\n')
         self.assertEqual(builder.regional_config(self.data, self.config)['selectedSerial'], 'SCUS-97265')
 
     def test_regional_inputs_cannot_mutate_shared_definition(self):

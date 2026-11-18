@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "game": "jak2",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "openGoalVersion": "v0.3.9",
   "platform": "windows-x64",
   "supportedSerials": [
@@ -74,7 +74,6 @@
         "iso_data/jak2/DGO/GARAGE.DGO": "735ea13a0a144263f10f339a119f132d3430521acd7e6d7a800cb8e3581a5fba",
         "iso_data/jak2/DGO/LINTCSTB.DGO": "89250cd42d9187e32b91c36b6275e06cb2101e66fdf883549f65589f6832ae4f",
         "iso_data/jak2/SCES_516.08": "81f3c37d0ce70245794bf441bb0c01841ac4036e2877532b9213575c855a6d92",
-        "iso_data/jak2/SYSTEM.CNF": "1bc906a2d51e2e036c7377e8147bc70854874ecc01de5296eea1c8a3da816465",
         "out/jak2/iso/GAME.CGO": "09e628c79f0c5ee8d4a45c7720a98d8e34388675e44ca9d13bd102c75b69bcff"
       },
       "validation": "Official OpenGOAL v0.3.9 full native extraction, territory-correct GAME compile, complete public-source portable conversion, six-model controls and exact native RGBA/indexed-context validation passed. PAL model/control components match the USA output; separate PAL live smoke not claimed.",
@@ -95,7 +94,6 @@
         "iso_data/jak2/DGO/GARAGE.DGO": "735ea13a0a144263f10f339a119f132d3430521acd7e6d7a800cb8e3581a5fba",
         "iso_data/jak2/DGO/LINTCSTB.DGO": "89250cd42d9187e32b91c36b6275e06cb2101e66fdf883549f65589f6832ae4f",
         "iso_data/jak2/SCUS_972.65": "fbb80af1e2328629ca66ff21785e59bf7fec34b165b4ff659aff20fa45de7b66",
-        "iso_data/jak2/SYSTEM.CNF": "05d93668e717d83b08b930a92cf763646c711342152c0b09346f1054797c2666",
         "out/jak2/iso/GAME.CGO": "0cbde73cbb3626fc02466dec1855c29688fd6dff11902f1fba9a16ee516f79bc"
       },
       "validation": "Official OpenGOAL v0.3.9 full native extraction, territory-correct GAME compile, complete public-source portable conversion, six-model controls and exact native RGBA/indexed-context validation passed. Fresh official v0.3.9 bounded player boot, native movement/blink and visible Dark-horn smoke passed; no campaign or hosted launcher UI claim.",

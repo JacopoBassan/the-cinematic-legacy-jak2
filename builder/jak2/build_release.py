@@ -118,22 +118,31 @@ def input_path(data, disc, relative):
 
 def regional_config(data, config):
     data, _, disc = input_roots(data, config)
+    disc_metadata = None
     metadata = disc / 'buildinfo.json'
     if metadata.is_file():
         rows = json.loads(metadata.read_text(encoding='utf-8'))
-        if not isinstance(rows, list) or len(rows) != 1:
+        if (not isinstance(rows, list) or len(rows) != 1 or not isinstance(rows[0], dict)
+                or not isinstance(rows[0].get('serial'), str)):
             raise ValueError('Invalid Jak II disc metadata')
-        serial = rows[0].get('serial')
+        disc_metadata = rows[0]
+        serial = disc_metadata['serial']
     else:
         # Also support a verified disc folder prepared before metadata export.
         # Exact ELF and every consumed archive are still checked below.
-        text = (disc / 'SYSTEM.CNF').read_text(encoding='ascii')
-        match = re.search(r'(SC[A-Z]{2})_(\d{3})\.(\d{2})', text)
-        serial = f'{match[1]}-{match[2]}{match[3]}' if match else None
+        boot = disc / 'SYSTEM.CNF'
+        if not boot.is_file():
+            raise ValueError('Missing Jak II disc metadata and SYSTEM.CNF. Re-extract the original disc.')
+        entries = re.findall(r'(?im)^[ \t]*BOOT2[ \t]*=(.*)$', boot.read_text(encoding='utf-8-sig'))
+        match = re.fullmatch(r'CDROM0:[\\/]?([A-Z]{4})[_-]([0-9]{3})\.([0-9]{2})(?:;1)?',
+                             entries[0].strip().upper()) if len(entries) == 1 else None
+        if not match:
+            raise ValueError('Cannot identify the Jak II disc executable in SYSTEM.CNF')
+        serial = f'{match[1]}-{match[2]}{match[3]}'
     profile = config.get('regionalProfiles', {}).get(serial)
     if serial not in config.get('supportedSerials', []) or profile is None:
         raise ValueError(f'Unsupported Jak II disc revision: {serial}')
-    if metadata.is_file() and profile.get('elfHash') is not None and rows[0].get('elf_hash') != profile['elfHash']:
+    if disc_metadata is not None and profile.get('elfHash') is not None and disc_metadata.get('elf_hash') != profile['elfHash']:
         raise ValueError('Unsupported executable metadata for ' + serial)
     result = dict(config)
     for field in ('inputs', 'fr3Inputs'):

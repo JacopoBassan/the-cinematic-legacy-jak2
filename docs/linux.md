@@ -2,7 +2,7 @@
 
 Linux x64 support is experimental. Real Linux launcher import, model conversion and gameplay are not yet validated.
 
-Use `linux-v0.3.2.tar.gz` from [Releases](https://github.com/JacopoBassan/the-cinematic-legacy-jak2/releases) with official OpenGOAL **v0.3.9**. Python and its dependencies are included.
+Use `linux-v0.3.3.tar.gz` from [Releases](https://github.com/JacopoBassan/the-cinematic-legacy-jak2/releases) with official OpenGOAL **v0.3.9**. Python and its dependencies are included.
 
 Supported EU and USA disc revisions are listed in [installation](installation.md). The installer uses the verified source files shipped with OpenGOAL and checks the disc and graphics files from your active game install.
 
