@@ -23,6 +23,7 @@ HERE = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 import platform_tools
+from texture_packs import Fr3, apply_texture_changes, has_replacements, replacement_folder, texture_changes
 GAME = 'jak2'
 FR3_FILES = ('GAME.fr3', 'atollext.fr3', 'underb.fr3', 'ctyasha.fr3', 'stadblmp.fr3')
 ARCHIVES = ('CGO/KERNEL.CGO', 'CGO/GAME.CGO', 'CGO/COMMON.CGO',
@@ -151,7 +152,7 @@ def regional_config(data, config):
     return result
 
 
-def preflight(data, tools, config):
+def preflight(data, tools, config, *, allow_texture_pack=False):
     data, tools = Path(data).resolve(), Path(tools).resolve()
     if config.get('game') != GAME or config.get('openGoalVersion') not in ('v0.3.8', 'v0.3.9'):
         raise ValueError('This builder requires a pinned, validated Jak II release definition')
@@ -176,13 +177,20 @@ def preflight(data, tools, config):
         require_hash(source / name, expected)
     for name, expected in selected['inputs'].items():
         require_hash(input_path(data, disc, name), expected)
+    mismatches = {}
+    can_check_pack = allow_texture_pack and has_replacements(replacement_folder(data, GAME))
     for name, expected in selected['fr3Inputs'].items():
-        if fr3_asset_hash(data / name, expected['firstModel'],
-                          normalize_envmaps=selected.get('platform') == 'macos-arm64') != expected['sha256']:
+        actual = fr3_asset_hash(data / name, expected['firstModel'],
+                               normalize_envmaps=selected.get('platform') == 'macos-arm64')
+        if actual != expected['sha256']:
+            if can_check_pack:
+                mismatches[name] = actual
+                continue
             raise ValueError(f'Unsupported or modified native graphics: {Path(name).name}')
     for folder, expected in selected['sourceTrees'].items():
         if tree_hash(source / folder) != expected:
             raise ValueError(f'Unsupported source/configuration tree: {folder}')
+    selected['graphicsMismatches'] = mismatches
     return selected
 
 
@@ -224,6 +232,50 @@ def extract(disc, tools, project, archives, levels, work, env, log, config, *, r
          '--disable-ansi', *platform_tools.compiler_options(config)], log, env, project)
 
 
+def stock_graphics(data, disc, tools, project, work, env, config):
+    """Rebuild the affected stock levels before validating the user's HUD pixels."""
+    mismatches = config['graphicsMismatches']
+    if not mismatches:
+        return {}, {}
+    levels = {'atollext': 'ATE.DGO', 'ctyasha': 'CTYASHA.DGO',
+              'stadblmp': 'STADBLMP.DGO', 'underb': 'UNB.DGO'}
+    # Both supported discs use this input list. The extractor applies the
+    # disc's regional decompiler configuration independently.
+    path = project / 'decompiler/config/jak2/ntsc_v1/inputs.jsonc'
+    spec = re.sub(r'/\*.*?\*/', '', path.read_text(), flags=re.S)
+    inputs = json.loads(re.sub(r',\s*([}\]])', r'\1', re.sub(r'//[^\n]*', '', spec)))
+    inputs['levels_to_extract'] = [levels[Path(name).stem] for name in mismatches
+                                   if Path(name).stem != 'GAME']
+    source = work / 'stock-graphics-inputs.json'
+    source.write_text(json.dumps(inputs), encoding='utf-8')
+    override = dict(inputs_file=source.as_posix(), rip_levels=False, dump_objs=False,
+                    process_game_text=False, process_game_count=False,
+                    process_part_group_table=False, extract_collision=False)
+    run([platform_tools.tool_path(tools, 'extractor', config), disc, '--folder', '--game', GAME,
+         '--proj-path', project, '--decompile', '--decomp-config-override', json.dumps(override),
+         '--disable-ansi', *platform_tools.compiler_options(config)],
+        work / '00-stock-graphics.log', env, project)
+    normalized = work / 'stock-graphics'
+    normalized.mkdir()
+    files, changes = {}, {}
+    replacements = replacement_folder(data, GAME)
+    normalize_envmaps = config.get('platform') == 'macos-arm64'
+    for relative in mismatches:
+        expected = config['fr3Inputs'][relative]
+        model = expected['firstModel']
+        rebuilt = project / relative
+        if fr3_asset_hash(rebuilt, model, normalize_envmaps) != expected['sha256']:
+            raise ValueError(f'Rebuilt stock graphics did not match {rebuilt.name}.')
+        clean, active = Fr3(rebuilt), Fr3(data / relative)
+        changes[rebuilt.name] = texture_changes(clean, active, replacements, model, normalize_envmaps)
+        staged = normalized / rebuilt.name
+        active.write_with_textures(staged, (record.record for record in clean.textures))
+        if fr3_asset_hash(staged, model, normalize_envmaps) != expected['sha256']:
+            raise ValueError(f'Graphics changes in {rebuilt.name} exceed the verified texture replacements.')
+        files[rebuilt.name] = staged
+    return files, changes
+
+
 def destinations(data, work, output):
     data, work, output = (Path(p).resolve() for p in (data, work, output))
     for target in (work, output):
@@ -263,9 +315,9 @@ def prepare_disc(disc, work, config):
 def build(data, tools, work, output, config):
     data, work, output = destinations(data, work, output)
     tools = Path(tools).resolve()
-    config = preflight(data, tools, config)
-    _, source_data, disc = input_roots(data, config)
-    for protected in (tools, source_data, disc):
+    config = preflight(data, tools, config, allow_texture_pack=True)
+    _, source_data, original_disc = input_roots(data, config)
+    for protected in (tools, source_data, original_disc):
         for target in (work, output):
             if target == protected or target.is_relative_to(protected) or protected.is_relative_to(target):
                 raise ValueError('Build destinations must be outside all injected input/tool roots')
@@ -275,7 +327,7 @@ def build(data, tools, work, output, config):
     if shutil.disk_usage(parent).free < 2 * 1024**3:
         raise ValueError('At least 2 GiB of temporary free space is required')
     work.mkdir(parents=True)
-    disc = prepare_disc(disc, work, config)
+    disc = prepare_disc(original_disc, work, config)
     project = work / 'import'
     project.mkdir()
     env = dict(os.environ, CINEMATIC_BUILD_WORK=str(work),
@@ -285,12 +337,14 @@ def build(data, tools, work, output, config):
     for folder, expected in config['sourceTrees'].items():
         if tree_hash(project / folder) != expected:
             raise ValueError('Source changed during build preparation')
+    native_files, pack_changes = stock_graphics(data, original_disc, tools, project, work, env, config)
     extract(disc, tools, project, ARCHIVES,
             [Path(x).name for x in ARCHIVES if x.startswith('DGO/')], work, env, work / '01-native-extraction.log', config)
     # Full native level context always comes from the verified installation.
     # The selective extraction is used only to obtain donor assets and GLBs.
     for filename in FR3_FILES:
-        shutil.copy2(data / 'out/jak2/fr3' / filename, project / 'out/jak2/fr3' / filename)
+        native = native_files.get(filename, data / 'out/jak2/fr3' / filename)
+        shutil.copy2(native, project / 'out/jak2/fr3' / filename)
     (work / 'variant-audit.json').write_text(json.dumps({'modelInventory': {
         name: [{'file': file} for file in files] for name, files in INVENTORY.items()}}), encoding='utf-8')
     step = 2
@@ -308,7 +362,7 @@ def build(data, tools, work, output, config):
     stage('build_faces.py', '--data', project, '--work', work)
     stage('restore_textures.py', '--data', project, '--work', work)
     stage('restore_context.py', '--candidate', work / 'GAME-cinematic.fr3',
-          '--original', data / 'out/jak2/fr3/GAME.fr3', '--output', work / 'GAME-context.fr3', '--work', work)
+          '--original', project / 'out/jak2/fr3/GAME.fr3', '--output', work / 'GAME-context.fr3', '--work', work)
     stage('build_npcs.py', '--data', project, '--work', work, '--output', work / 'npc-geometry')
     stage('npc_materials.py', '--data', project, '--work', work, '--input', work / 'npc-geometry',
           '--output', work / 'npc-materials', '--only', 'sig', 'ashelin')
@@ -327,7 +381,7 @@ def build(data, tools, work, output, config):
           '--stage-output', work / 'npc-sk-faces/stadblmp.fr3')
     stage('stage_npcs.py', '--data', project, '--work', work, '--geometry', work / 'npc-materials',
           '--faces', work / 'npc-sk-faces', '--output', work / 'npc-ready')
-    stage('validate_payload.py', '--data', data, '--work', work)
+    stage('validate_payload.py', '--data', project, '--work', work)
     runtime_sources = {
         'foreground-cinematic.gc': 'engine/gfx/foreground/foreground.gc',
         'texture-anim-cinematic.gc': 'engine/gfx/texture/texture-anim.gc',
@@ -344,6 +398,10 @@ def build(data, tools, work, output, config):
          '--port', '8282', '--debug-port', '8229', *platform_tools.compiler_options(config), '--cmd', command], work / '16-compile.log', env, project)
     from jak2.patch_archive import assemble
     archive_report = assemble(data / 'out/jak2/iso/GAME.CGO', project / 'out/jak2/obj', work / 'GAME-cinematic.CGO')
+    return package_payload(data, tools, work, output, config, archive_report, pack_changes)
+
+
+def package_payload(data, tools, work, output, config, archive_report, pack_changes):
     output.mkdir(parents=True)
     generated = {'data/out/jak2/fr3/GAME.fr3': work / 'GAME-context.fr3',
                  'data/out/jak2/iso/GAME.CGO': work / 'GAME-cinematic.CGO'}
@@ -356,6 +414,9 @@ def build(data, tools, work, output, config):
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
         require_hash(destination, sha(source))
+        copied = apply_texture_changes(destination, pack_changes.get(destination.name, {}))
+        if copied:
+            print(f'Kept {copied} texture pack replacements in {destination.name}', flush=True)
         files.append({'path': relative, 'sha256': sha(destination), 'bytes': destination.stat().st_size})
     manifest = {'schemaVersion': 1, 'game': GAME, 'version': config['version'],
                 'openGoalVersion': config['openGoalVersion'], 'platform': config['platform'],
@@ -370,7 +431,8 @@ def build(data, tools, work, output, config):
     (output / 'archive-validation.json').write_text(json.dumps(archive_report, indent=2) + '\n', encoding='utf-8')
     shutil.copy2(work / 'payload-validation.json', output / 'validation.json')
     (output / 'DO-NOT-PUBLISH.txt').write_text('Locally generated game assets. Distribute only the asset-free builder package.\n', encoding='utf-8')
-    preflight(data, tools, config)
+    if preflight(data, tools, config, allow_texture_pack=True)['graphicsMismatches'] != config['graphicsMismatches']:
+        raise ValueError('Active game graphics changed during installation. Retry the build.')
     temporary = output / 'manifest.json.new'
     temporary.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     os.replace(temporary, output / 'manifest.json')

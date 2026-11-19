@@ -6,6 +6,7 @@
     "requirements.txt",
     "platform_tools.py",
     "fr3_fingerprint.py",
+    "texture_packs.py",
     "platforms/macos-arm64.json",
     "retarget_glb.py",
     "stages/fr3_models.py",

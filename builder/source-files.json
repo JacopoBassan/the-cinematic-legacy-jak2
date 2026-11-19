@@ -67,7 +67,8 @@
     "stages/fr3_models.py",
     "stages/inspect_faces.py",
     "stages/inspect_transformations.py",
-    "stages/npc_builder.py"
+    "stages/npc_builder.py",
+    "texture_packs.py"
   ],
   "runtimeFiles": [
     "CREDITS.txt",
@@ -118,6 +119,7 @@
     "stages/fr3_models.py",
     "stages/inspect_faces.py",
     "stages/inspect_transformations.py",
-    "stages/npc_builder.py"
+    "stages/npc_builder.py",
+    "texture_packs.py"
   ]
 }

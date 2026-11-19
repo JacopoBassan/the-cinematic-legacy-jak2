@@ -1,6 +1,10 @@
 # Jak II verification
 
-Release `0.3.6` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+Release `0.3.7` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+
+## Refreshed HUD
+
+Refreshed HUD 1.2 texture preservation was verified with the supported PAL and USA discs on Windows using OpenGOAL v0.3.9. The same texture handling runs in the macOS and Linux installers.
 
 ## Source checks
 
