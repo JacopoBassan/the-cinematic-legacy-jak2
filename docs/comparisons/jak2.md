@@ -22,6 +22,10 @@ Original left, Cinematic right. In-game screenshots.
 
 ![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.webp)
 
+**Peace Maker**
+
+![Jak & Daxter with the Peace Maker: Original left, Cinematic right](jak2/jak-daxter-peace-maker.webp)
+
 ## Dark Jak & Daxter
 
 Dark Jak keeps his original gameplay horns.
