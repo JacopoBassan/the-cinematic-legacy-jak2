@@ -160,6 +160,44 @@
           }
         },
         {
+          "subject": "Jak & Daxter",
+          "view": "Peace Maker",
+          "path": "jak2/jak-daxter-peace-maker.webp",
+          "dimensions": [
+            1256,
+            593
+          ],
+          "sha256": "5f7265bd4210bc65e06b0b1d73ac40809c747c86255e3aa18adc12a0b37d3d6c",
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              700,
+              34,
+              1324,
+              595
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "a02d7390f08a4a86f4e1c83e46358cdab17d672eb0a745b2fe47d4458d673838",
+              "cinematic": "d629d9346248130beb163e88ef1a2f02ebc7037643e3a254f970726b4d2b5dd9"
+            },
+            "outputEncoding": {
+              "format": "WebP",
+              "lossless": true,
+              "decodedPixelsPreserved": true
+            },
+            "outputLayout": {
+              "header": 32,
+              "gap": 8,
+              "margin": 0
+            }
+          }
+        },
+        {
           "subject": "Dark Jak & Daxter",
           "view": "Front",
           "path": "jak2/darkjak-front.webp",

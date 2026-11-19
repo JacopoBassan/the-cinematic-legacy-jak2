@@ -56,7 +56,11 @@ def main():
             assert len(out)==2
             return out
         high_eyes=eyes(high)
-        for eye in high_eyes:deformations.pop(eye,None)
+        # Daxter's eye caps and eyelids deform together in the cinematic model.
+        # A rigid cap can show through the brow when the fitted eyelid moves.
+        if name != 'daxter-lod0':
+            for eye in high_eyes:
+                deformations.pop(eye,None)
         def adapter(*_):return hd,ha,deformations,count,[]
         low_eyes={0:3,1:2} if name.startswith('jak') else {0:2,1:1}
         eye_uv,eye_report=calibrated_eye_uvs(lp,la,hp,ha,high_eyes,low_eyes,name)
