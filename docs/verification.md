@@ -1,6 +1,6 @@
 # Jak II verification
 
-Release `0.3.4` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+Release `0.3.5` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
 
 ## Source checks
 
@@ -20,7 +20,7 @@ Original input checks passed for the supported EU and USA discs with the pinned 
 
 The Linux workflow uses Ubuntu 24.04 x64. It builds the final TAR.GZ and checks archive hashes, executable modes, source files, the bundled Python runtime and native dependency operations.
 
-Linux builds use the source tree shipped with the pinned OpenGOAL version when it is installed. The installer continues to check the player’s disc and generated game files.
+Launcher builds prefer the source shipped with the pinned OpenGOAL tools. The launcher merges source files into the active game folder, where older files can remain. The builder checks the selected source, the player’s disc and generated game files.
 
 Asset-free installer fixtures cover first install, updates, input and save preservation, wrong-game and running-game refusal, cancellation, rollback, child-process cleanup and retry. They use synthetic files and do not drive the real launcher or convert real game assets. They also check transaction marker ownership and inherited runtime settings. The workflow stores a `verification-linux-x64` receipt.
 
