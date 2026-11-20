@@ -18,12 +18,13 @@ def validate(data, work):
     import npc_materials as io
     io.configure(work)
     from jak2.build_npcs import native_joint_limit
+    from jak2.nape import NAPE_TEXTURE_SLOT, NAPE_TRIANGLES
     from jak2.patch_runtime import EFFECTS, REFLECTION_EFFECTS
     from npc_builder import texture_bytes
     from review_npc_context import compare_draws, payload, texture_equal
     from jak2.restore_context import indexed_textures
     specs = {
-        'GAME.fr3': {'jakb-lod0': (10784, [0, 1], True), 'daxter-lod0': (9510, [2, 3], True)},
+        'GAME.fr3': {'jakb-lod0': (10784 + NAPE_TRIANGLES, [0, 1], True), 'daxter-lod0': (9510, [2, 3], True)},
         'atollext.fr3': {'sig-lod0': (10750, [208], False), 'ashelin-lod0': (10223, [200, 201], False)},
         'underb.fr3': {'sig-lod0': (10750, [208], False)},
         'ctyasha.fr3': {'ashelin-lod0': (10223, [200, 201], False)},
@@ -60,13 +61,14 @@ def validate(data, work):
             active_joints = set()
             float_vertices = 0
             animated_slots = set()
+            jak_slots = {-14, -11, -10, -9, NAPE_TEXTURE_SLOT}
             def check(draws, source):
                 for packed in draws:
                     mode, texture, eye, start, count, _, _ = io.DRAW.unpack(packed)
                     if texture >= 0:
                         assert texture < len(textures)
                     else:
-                        assert name == 'jakb-lod0' and texture in (-14, -11, -10, -9)
+                        assert name == 'jakb-lod0' and texture in jak_slots
                         animated_slots.add(texture)
                     if eye != 255:
                         actual_eyes.add(eye)
@@ -101,7 +103,7 @@ def validate(data, work):
             assert active_joints and max(active_joints) <= limit
             assert bool(float_vertices) == has_morphs, (name, float_vertices, has_morphs)
             if name == 'jakb-lod0':
-                assert animated_slots == {-14, -11, -10, -9}
+                assert animated_slots == jak_slots
             rows.append({'model': name, 'triangles': triangle_count, 'eyeIds': eyes,
                          'maximumWeightedJoint': max(active_joints), 'nativeJointLimit': limit,
                          'floatMorphVertices': float_vertices, 'effectControls': EFFECTS[name],

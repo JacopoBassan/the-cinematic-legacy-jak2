@@ -160,44 +160,6 @@
           }
         },
         {
-          "subject": "Jak & Daxter",
-          "view": "Peace Maker",
-          "path": "jak2/jak-daxter-peace-maker.webp",
-          "dimensions": [
-            1256,
-            593
-          ],
-          "sha256": "5f7265bd4210bc65e06b0b1d73ac40809c747c86255e3aa18adc12a0b37d3d6c",
-          "framing": {
-            "sourceDimensions": [
-              1920,
-              1080
-            ],
-            "sharedCrop": [
-              700,
-              34,
-              1324,
-              595
-            ],
-            "sourceImagesResized": false,
-            "sourcePixelEdits": false,
-            "sourceCaptureSha256": {
-              "original": "a02d7390f08a4a86f4e1c83e46358cdab17d672eb0a745b2fe47d4458d673838",
-              "cinematic": "d629d9346248130beb163e88ef1a2f02ebc7037643e3a254f970726b4d2b5dd9"
-            },
-            "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
-            },
-            "outputLayout": {
-              "header": 32,
-              "gap": 8,
-              "margin": 0
-            }
-          }
-        },
-        {
           "subject": "Dark Jak & Daxter",
           "view": "Front",
           "path": "jak2/darkjak-front.webp",
@@ -789,6 +751,179 @@
             "sourceSha256": "e1f909519d3556f65d287caced5b6e282508a978d2e38dad6e0c35d72ba8e2e5",
             "decodedRgbSha256": "3704a86ed35858d3c05a80057756db2143e8f7a3adb1f442d6e2e8fd204760db",
             "method": "jpegtran progressive"
+          }
+        },
+        {
+          "subject": "Jak",
+          "view": "Jak’s frown",
+          "path": "jak2/expressions/jak-frown.webp",
+          "dimensions": [
+            798,
+            416
+          ],
+          "sha256": "a1e21ceaa0a909aedc98df8a4b88bfa70c8c822047a6cc32dc4d867f01747c4a",
+          "bytes": 333398,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              720,
+              151,
+              1115,
+              531
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "0644fd49d9b00bddcd40095ae665baee0baacffa41df9117e206e212656ce450",
+              "cinematic": "b420d4898a0193b128934fc25dbd90b9924227b779fbc3932620460c4722fb7e"
+            },
+            "outputEncoding": {
+              "format": "WebP",
+              "lossless": true,
+              "exact": true
+            },
+            "outputLayout": {
+              "header": 36,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "channel": 5,
+            "weight": 8192
+          }
+        },
+        {
+          "subject": "Jak",
+          "view": "Jak’s shout",
+          "path": "jak2/expressions/jak-shout.webp",
+          "dimensions": [
+            798,
+            416
+          ],
+          "sha256": "a92b8a7d713de32b846f8dcb37a5cdd7ce2ddebd89099e7a6fecb12b0df862eb",
+          "bytes": 333160,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              720,
+              151,
+              1115,
+              531
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "6de6acc0dd62bd88832314b403f7878f97a80d480eca30b7c6397b444e140c5d",
+              "cinematic": "e838c6eb50cbd78ddece6ae42600a0a20367fd428ba9a3da87171fd38aed2b6f"
+            },
+            "outputEncoding": {
+              "format": "WebP",
+              "lossless": true,
+              "exact": true
+            },
+            "outputLayout": {
+              "header": 36,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "channel": 8,
+            "weight": 6528,
+            "nativeEyeControlsMatched": true
+          }
+        },
+        {
+          "subject": "Daxter",
+          "view": "Daxter’s side grin",
+          "path": "jak2/expressions/daxter-side-grin.webp",
+          "dimensions": [
+            678,
+            279
+          ],
+          "sha256": "ed5c069a733aff24eb349546647db3b4d6850a5b714e22ace6e24058e0124ead",
+          "bytes": 214236,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              900,
+              286,
+              1235,
+              535
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "5583b83841eed31cd28925fae47c5aac531f31d189840cfb6772746fbb091b64",
+              "cinematic": "6ea6ececd3aca92d4deaca416988da6d08dc898cb131486e79d006a30a6d8783"
+            },
+            "outputEncoding": {
+              "format": "WebP",
+              "lossless": true,
+              "exact": true
+            },
+            "outputLayout": {
+              "header": 30,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "channel": 6,
+            "weight": 8064,
+            "nativeEyeControlsMatched": true
+          }
+        },
+        {
+          "subject": "Daxter",
+          "view": "Daxter’s Dark Jak grimace",
+          "path": "jak2/expressions/daxter-dark-jak.webp",
+          "dimensions": [
+            848,
+            376
+          ],
+          "sha256": "bc5c687ff825d7a9b5e39f617b6b483dd77159a5139c06edf0fec3ab0e969d7f",
+          "bytes": 296658,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              947,
+              0,
+              1367,
+              338
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "171b920ab5632d2ea4584f144e6a5eb6b50ef086529a77bac9434760c7ed3ee0",
+              "cinematic": "5a97cfc7ecd81acbdba54d18380be07865642284ee34902cf9831d39a2d0bbee"
+            },
+            "outputEncoding": {
+              "format": "WebP",
+              "lossless": true,
+              "exact": true
+            },
+            "outputLayout": {
+              "header": 38,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "nativeFrame": 13.75
           }
         }
       ]

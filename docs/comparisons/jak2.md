@@ -22,9 +22,17 @@ Original left, Cinematic right. In-game screenshots.
 
 ![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.webp)
 
-**Peace Maker**
+**Jak’s frown**
 
-![Jak & Daxter with the Peace Maker: Original left, Cinematic right](jak2/jak-daxter-peace-maker.webp)
+![Jak’s frown. Original left, Cinematic right.](jak2/expressions/jak-frown.webp)
+
+**Jak’s shout**
+
+![Jak’s shout. Original left, Cinematic right.](jak2/expressions/jak-shout.webp)
+
+**Daxter’s side grin**
+
+![Daxter’s side grin. Original left, Cinematic right.](jak2/expressions/daxter-side-grin.webp)
 
 ## Dark Jak & Daxter
 
@@ -45,6 +53,10 @@ Dark Jak keeps his original gameplay horns.
 **Back**
 
 ![Dark Jak & Daxter, Back: Original left, Cinematic right](jak2/darkjak-back.webp)
+
+**Daxter’s Dark Jak grimace**
+
+![Daxter’s Dark Jak grimace. Original left, Cinematic right.](jak2/expressions/daxter-dark-jak.webp)
 
 ## Sig
 

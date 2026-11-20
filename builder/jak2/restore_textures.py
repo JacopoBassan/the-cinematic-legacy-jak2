@@ -34,11 +34,15 @@ def main():
     from transformations import connect
     fixed,transformation=connect(bytes(out),decompress(a.data/'out/jak2/fr3/hiphog.fr3'),a.work/'rig-prototypes/jakb-lod0.glb')
     from native_horns import retain_native_horns
-    fixed,horns=retain_native_horns(fixed,decompress(a.data/'out/jak2/fr3/GAME.fr3'),a.work/'rig-prototypes/jakb-lod0.glb')
+    from nape import restore_nape
+    original=decompress(a.data/'out/jak2/fr3/GAME.fr3')
+    prototype=a.work/'rig-prototypes/jakb-lod0.glb'
+    fixed,horns=retain_native_horns(fixed,original,prototype)
+    fixed,nape=restore_nape(fixed,original,prototype)
     output=a.output or a.work/'GAME-cinematic.fr3'
     compress(output,fixed)
     assert decompress(output)==fixed
-    report=json.dumps({'restored':restored,'globalNamesPreserved':True,'transformation':transformation,'hornCompatibility':horns},indent=2)+'\n'
+    report=json.dumps({'restored':restored,'globalNamesPreserved':True,'transformation':transformation,'hornCompatibility':horns,'nape':nape},indent=2)+'\n'
     output.with_suffix('.textures.json').write_text(report)
     if a.output is None:(a.work/'texture-report.json').write_text(report)
     print('Restored',len(restored),'cinematic textures and isolated custom names')
