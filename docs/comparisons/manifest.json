@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "source": "OpenGOAL in-game screenshots",
-  "pixelEdits": false,
   "copiesPreserveSourceBytes": false,
   "games": {
     "jak2": {
@@ -10,12 +9,12 @@
         {
           "subject": "Jak & Daxter",
           "view": "Front",
-          "path": "jak2/jak-front.webp",
+          "path": "jak2/jak-front.jpg",
           "dimensions": [
             1072,
             978
           ],
-          "sha256": "6749ef5af37231059b94df322c5e04d6941f75fca7bb348d8ffd4a57da37db96",
+          "sha256": "59b33a1ddaf5cf23065ee0442828473ad35a7a26f0c949adbada2f39680cb28a",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -34,26 +33,35 @@
               "cinematic": "aef29f479af74cfbdfbb8d752f3489064170b8d76836dace9ccd25597406fdf7"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 390740,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/jak-front.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "6749ef5af37231059b94df322c5e04d6941f75fca7bb348d8ffd4a57da37db96"
           }
         },
         {
           "subject": "Jak & Daxter",
           "view": "Left",
-          "path": "jak2/jak-left.webp",
+          "path": "jak2/jak-left.jpg",
           "dimensions": [
             1072,
             978
           ],
-          "sha256": "0f45890d0a4924645bac7164d4db74f84daf59909c315a0d3ebb1ba630a1c45c",
+          "sha256": "3d9cef2509be07fda8afc31cab3dfb27770bd20ff954f6e45d02a697ef8b3229",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -72,26 +80,35 @@
               "cinematic": "866eb12b514b20d48921ac6c6537df146040a0c51758b6db5da38ed4d8b5e116"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 381600,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/jak-left.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "0f45890d0a4924645bac7164d4db74f84daf59909c315a0d3ebb1ba630a1c45c"
           }
         },
         {
           "subject": "Jak & Daxter",
           "view": "Right",
-          "path": "jak2/jak-right.webp",
+          "path": "jak2/jak-right.jpg",
           "dimensions": [
             1072,
             978
           ],
-          "sha256": "6bf170152bc792c4e644e5482f1b09b4aefde2f9e82d51a43ddd57397fcc29a3",
+          "sha256": "ec078964601e0b108c31115988e5454411e056ddb2563886c30a6dd297369d61",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -110,26 +127,35 @@
               "cinematic": "94096b9b1384fb1d2315b2cbdc4bb32f11fc74f7e950188d7db5fbd1cbb8395b"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 401291,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/jak-right.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "6bf170152bc792c4e644e5482f1b09b4aefde2f9e82d51a43ddd57397fcc29a3"
           }
         },
         {
           "subject": "Jak & Daxter",
           "view": "Back",
-          "path": "jak2/jak-back.webp",
+          "path": "jak2/jak-back.jpg",
           "dimensions": [
             1072,
             978
           ],
-          "sha256": "45509c9d5266599a183abdec49bfca698f24c75f1e0e27614923e61b52acf172",
+          "sha256": "709276243f8a095177178737ed3a4303bb462b86452b93b355b28d177fa90980",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -148,26 +174,35 @@
               "cinematic": "e878000295e51af58a37a537f00eadcda3b269759ef547ca25afbd5bb9bdca6f"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 402956,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/jak-back.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "45509c9d5266599a183abdec49bfca698f24c75f1e0e27614923e61b52acf172"
           }
         },
         {
           "subject": "Dark Jak & Daxter",
           "view": "Front",
-          "path": "jak2/darkjak-front.webp",
+          "path": "jak2/darkjak-front.jpg",
           "dimensions": [
             1352,
             848
           ],
-          "sha256": "281394a5b8682a42aaef40968955c1538bd4e7ee2f7b95f8dde0afe53b2f5499",
+          "sha256": "9213751bcb33f4e92ff68291cfe2487cbc3dce081399013d6a5a7da1921f2fd5",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -186,26 +221,35 @@
               "cinematic": "cdf0dc934ff5332b6c3ccfba29e3a0f3972b3e31d94fd52102b113e80885d5ec"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 433962,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/darkjak-front.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "281394a5b8682a42aaef40968955c1538bd4e7ee2f7b95f8dde0afe53b2f5499"
           }
         },
         {
           "subject": "Dark Jak & Daxter",
           "view": "Left",
-          "path": "jak2/darkjak-left.webp",
+          "path": "jak2/darkjak-left.jpg",
           "dimensions": [
             1352,
             848
           ],
-          "sha256": "c89dafd4a8b626f6204891cbfb1fbc5179417de735d339b2a36986323d3d9b01",
+          "sha256": "e4a14fc4d795d79d0073248c2c17ba965c48b4e83ae47e890c0411f999a321b0",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -224,26 +268,35 @@
               "cinematic": "33153d83b32ed2b0b10b3beb44d49813faacac5d477bf9de5e122563593e80e6"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 400438,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/darkjak-left.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "c89dafd4a8b626f6204891cbfb1fbc5179417de735d339b2a36986323d3d9b01"
           }
         },
         {
           "subject": "Dark Jak & Daxter",
           "view": "Right",
-          "path": "jak2/darkjak-right.webp",
+          "path": "jak2/darkjak-right.jpg",
           "dimensions": [
             1352,
             848
           ],
-          "sha256": "84660032c0bfcae8cf77d73a07a0cc5a8c35fee6769ac5d1e442ff95a3a2e0bc",
+          "sha256": "adb9511915ddc932d764ea2d80c42b6fc97768971f3733116ad0c12e812626b6",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -262,26 +315,35 @@
               "cinematic": "d02f7b0586bf7cb2651a80ad9ca63f949106c6fbb48d0ffb51e7f27b6bd14e6f"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 376794,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/darkjak-right.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "84660032c0bfcae8cf77d73a07a0cc5a8c35fee6769ac5d1e442ff95a3a2e0bc"
           }
         },
         {
           "subject": "Dark Jak & Daxter",
           "view": "Back",
-          "path": "jak2/darkjak-back.webp",
+          "path": "jak2/darkjak-back.jpg",
           "dimensions": [
             1352,
             848
           ],
-          "sha256": "d131a5d891f3fd341e683f143aa8c1347a621d2dc5218844700d5693d2f6d88f",
+          "sha256": "d2a7ab9a71296dfee2f68cd5ea401f90b2c2fd3122c847d4fcafca022177b651",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -300,26 +362,35 @@
               "cinematic": "f4407e00ae9acd8f4b5b25e32be2411812c65901fa76215f0d8f26edaf78e016"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 409827,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/darkjak-back.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "d131a5d891f3fd341e683f143aa8c1347a621d2dc5218844700d5693d2f6d88f"
           }
         },
         {
           "subject": "Sig",
           "view": "Front",
-          "path": "jak2/sig-front.webp",
+          "path": "jak2/sig-front.jpg",
           "dimensions": [
             1312,
             748
           ],
-          "sha256": "cb3288f1cfdd754a387bb22cbc14d491466e54178469babe8f8c14784d853c90",
+          "sha256": "9606f04127d9fd745de020360b271098f4efe0b3cdbb8f879f136c72e7acc851",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -338,26 +409,35 @@
               "cinematic": "c6a857114bd3d18daa391bbbcfd5cc56658fc0fdf01c7b1253d60f7b1c32ac0a"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 435467,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/sig-front.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "cb3288f1cfdd754a387bb22cbc14d491466e54178469babe8f8c14784d853c90"
           }
         },
         {
           "subject": "Sig",
           "view": "Right",
-          "path": "jak2/sig-right.webp",
+          "path": "jak2/sig-right.jpg",
           "dimensions": [
             1312,
             748
           ],
-          "sha256": "83f0a67931d09f6c2831b74204ede1b625c1b01329d4cff545b31ab758e656b0",
+          "sha256": "2dff140b1531917d390f49758bd7122a3dfbf19f9703586b36c7b5c2217ccc4e",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -376,26 +456,35 @@
               "cinematic": "efc47d99c65ac2f8fac9ab56a02bf9f4bbf001cf17042a356836cebf4f03acd3"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 360497,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/sig-right.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "83f0a67931d09f6c2831b74204ede1b625c1b01329d4cff545b31ab758e656b0"
           }
         },
         {
           "subject": "Sig",
           "view": "Back",
-          "path": "jak2/sig-back.webp",
+          "path": "jak2/sig-back.jpg",
           "dimensions": [
             1312,
             748
           ],
-          "sha256": "c20b21f68a18350be389fde744d0f15c276bcf4cfb43fab963109c16b8e42293",
+          "sha256": "fb17ab13a925a2835a2ece3a23ee9f7d862721ca4d1e1198308c8371cc44a38a",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -414,15 +503,24 @@
               "cinematic": "14b09dbce28a42de6eaee1951b3e0a44f6fba80d3afc47860be1272deb417608"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 315388,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/sig-back.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "c20b21f68a18350be389fde744d0f15c276bcf4cfb43fab963109c16b8e42293"
           }
         },
         {
@@ -516,12 +614,12 @@
         {
           "subject": "Samos",
           "view": "Front",
-          "path": "jak2/samos-front.webp",
+          "path": "jak2/samos-front.jpg",
           "dimensions": [
             1152,
             808
           ],
-          "sha256": "4557ae5621e706400ce9855089216c1c8a531ee1dccc4e2e74d19b4dd01ce152",
+          "sha256": "96a5d2a2b1022d35201352316c6329c4bd69abf7b17c29332bc7b8e1b717148d",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -540,26 +638,35 @@
               "cinematic": "391a2115e7a8b7197434b2242044fe606bd80ff71c64076867d79f76e4186fe3"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 375566,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/samos-front.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "4557ae5621e706400ce9855089216c1c8a531ee1dccc4e2e74d19b4dd01ce152"
           }
         },
         {
           "subject": "Samos",
           "view": "Left",
-          "path": "jak2/samos-left.webp",
+          "path": "jak2/samos-left.jpg",
           "dimensions": [
             1152,
             808
           ],
-          "sha256": "b42449e8057bbf29768985d86a23f3fc42e5adcb23c4369a7acb70ad689bf8f6",
+          "sha256": "f94ffb907762df4c5e9891dbf5a9563a18e2cec88c8e5a9afc8995a526ab88d9",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -578,26 +685,35 @@
               "cinematic": "aea4d0cae4a86ac508703784436f82a5263f41c868befc5515201995a1bf6bfb"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 341610,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/samos-left.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "b42449e8057bbf29768985d86a23f3fc42e5adcb23c4369a7acb70ad689bf8f6"
           }
         },
         {
           "subject": "Samos",
           "view": "Right",
-          "path": "jak2/samos-right.webp",
+          "path": "jak2/samos-right.jpg",
           "dimensions": [
             1152,
             808
           ],
-          "sha256": "57249ce0154214d16eeb7022f748cf69c037633c0ee7aaabccf3f7d817fd367f",
+          "sha256": "69dc2ca668d7136a9b0321786800ed39cfec6a474d22615971c327c92cc8290f",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -616,26 +732,35 @@
               "cinematic": "99fe12261a65ae1296635207075126a8634d171a822e7e89a1ab45a396ac6e81"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 303127,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/samos-right.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "57249ce0154214d16eeb7022f748cf69c037633c0ee7aaabccf3f7d817fd367f"
           }
         },
         {
           "subject": "Samos",
           "view": "Back",
-          "path": "jak2/samos-back.webp",
+          "path": "jak2/samos-back.jpg",
           "dimensions": [
             1152,
             808
           ],
-          "sha256": "ca454fcfa1de035332664b53b9b3ea651c703a61cfdc4bc011130c103045b94a",
+          "sha256": "16119aeb3808a63375c011d0063a578ede2046626a0c5c038b7912dbd62eea62",
           "framing": {
             "sourceDimensions": [
               1920,
@@ -654,15 +779,24 @@
               "cinematic": "3c8a7ca549477358908eae9f4a16e5ea229cbf0be42f26411fc0e6f22d849e25"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "decodedPixelsPreserved": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 48,
               "gap": 12,
               "margin": 0
             }
+          },
+          "bytes": 363061,
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/samos-back.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "ca454fcfa1de035332664b53b9b3ea651c703a61cfdc4bc011130c103045b94a"
           }
         },
         {
@@ -756,13 +890,13 @@
         {
           "subject": "Jak",
           "view": "Jak’s frown",
-          "path": "jak2/expressions/jak-frown.webp",
+          "path": "jak2/expressions/jak-frown.jpg",
           "dimensions": [
             798,
             416
           ],
-          "sha256": "a1e21ceaa0a909aedc98df8a4b88bfa70c8c822047a6cc32dc4d867f01747c4a",
-          "bytes": 333398,
+          "sha256": "c71545b6d38fb2794b04835defa82c71376dfcb2317250b6129eca98f6feb223",
+          "bytes": 189568,
           "framing": {
             "sourceDimensions": [
               1920,
@@ -781,9 +915,12 @@
               "cinematic": "b420d4898a0193b128934fc25dbd90b9924227b779fbc3932620460c4722fb7e"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "exact": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 36,
@@ -794,18 +931,23 @@
           "matchedCapture": {
             "channel": 5,
             "weight": 8192
+          },
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/expressions/jak-frown.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "a1e21ceaa0a909aedc98df8a4b88bfa70c8c822047a6cc32dc4d867f01747c4a"
           }
         },
         {
           "subject": "Jak",
           "view": "Jak’s shout",
-          "path": "jak2/expressions/jak-shout.webp",
+          "path": "jak2/expressions/jak-shout.jpg",
           "dimensions": [
             798,
             416
           ],
-          "sha256": "a92b8a7d713de32b846f8dcb37a5cdd7ce2ddebd89099e7a6fecb12b0df862eb",
-          "bytes": 333160,
+          "sha256": "05bb84e69af66381d5aa992328bbb2207649c503df080638d6fd762e2ae9aa6d",
+          "bytes": 190060,
           "framing": {
             "sourceDimensions": [
               1920,
@@ -824,9 +966,12 @@
               "cinematic": "e838c6eb50cbd78ddece6ae42600a0a20367fd428ba9a3da87171fd38aed2b6f"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "exact": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 36,
@@ -838,18 +983,23 @@
             "channel": 8,
             "weight": 6528,
             "nativeEyeControlsMatched": true
+          },
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/expressions/jak-shout.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "a92b8a7d713de32b846f8dcb37a5cdd7ce2ddebd89099e7a6fecb12b0df862eb"
           }
         },
         {
           "subject": "Daxter",
           "view": "Daxter’s side grin",
-          "path": "jak2/expressions/daxter-side-grin.webp",
+          "path": "jak2/expressions/daxter-side-grin.jpg",
           "dimensions": [
             678,
             279
           ],
-          "sha256": "ed5c069a733aff24eb349546647db3b4d6850a5b714e22ace6e24058e0124ead",
-          "bytes": 214236,
+          "sha256": "b70a0ce4a4340e2de86c8bdd4a3aac66cd343969d02ae19ddad0d03aec35ea2f",
+          "bytes": 124705,
           "framing": {
             "sourceDimensions": [
               1920,
@@ -868,9 +1018,12 @@
               "cinematic": "6ea6ececd3aca92d4deaca416988da6d08dc898cb131486e79d006a30a6d8783"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "exact": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 30,
@@ -882,18 +1035,23 @@
             "channel": 6,
             "weight": 8064,
             "nativeEyeControlsMatched": true
+          },
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/expressions/daxter-side-grin.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "ed5c069a733aff24eb349546647db3b4d6850a5b714e22ace6e24058e0124ead"
           }
         },
         {
           "subject": "Daxter",
           "view": "Daxter’s Dark Jak grimace",
-          "path": "jak2/expressions/daxter-dark-jak.webp",
+          "path": "jak2/expressions/daxter-dark-jak.jpg",
           "dimensions": [
             848,
             376
           ],
-          "sha256": "bc5c687ff825d7a9b5e39f617b6b483dd77159a5139c06edf0fec3ab0e969d7f",
-          "bytes": 296658,
+          "sha256": "7e8828b2ec406b1b20d8865e8ba9bf53d26c46bf13991a6498dbe859ff617601",
+          "bytes": 179637,
           "framing": {
             "sourceDimensions": [
               1920,
@@ -912,9 +1070,12 @@
               "cinematic": "5a97cfc7ecd81acbdba54d18380be07865642284ee34902cf9831d39a2d0bbee"
             },
             "outputEncoding": {
-              "format": "WebP",
-              "lossless": true,
-              "exact": true
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
             },
             "outputLayout": {
               "header": 38,
@@ -924,9 +1085,15 @@
           },
           "matchedCapture": {
             "nativeFrame": 13.75
+          },
+          "sourceWebP": {
+            "path": "docs/comparisons/jak2/expressions/daxter-dark-jak.webp",
+            "commit": "741a9a694fca273e919507118c75a84e0774ac18",
+            "sha256": "bc5c687ff825d7a9b5e39f617b6b483dd77159a5139c06edf0fec3ab0e969d7f"
           }
         }
       ]
     }
-  }
+  },
+  "sourcePixelEdits": false
 }

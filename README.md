@@ -4,7 +4,7 @@ Play Jak II with the cinematic character models. Includes Jak, Daxter, Dark Jak,
 
 [Trilogy hub](https://github.com/JacopoBassan/the-cinematic-legacy) · Other games: [Jak and Daxter](https://github.com/JacopoBassan/the-cinematic-legacy-jak1) · [Jak 3](https://github.com/JacopoBassan/the-cinematic-legacy-jak3)
 
-[![Original and Cinematic comparison](docs/comparisons/jak2/jak-front.webp)](docs/comparisons/jak2.md)
+[![Original and Cinematic comparison](docs/comparisons/jak2/jak-front.jpg)](docs/comparisons/jak2.md)
 
 [Install](#install) · [All comparisons](docs/comparisons/jak2.md) · [Behind the scenes](https://github.com/JacopoBassan/the-cinematic-legacy/blob/main/docs/behind-the-scenes.md)
 

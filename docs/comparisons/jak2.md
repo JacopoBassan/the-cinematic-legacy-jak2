@@ -8,31 +8,31 @@ Original left, Cinematic right. In-game screenshots.
 
 **Front**
 
-![Jak & Daxter, Front: Original left, Cinematic right](jak2/jak-front.webp)
+![Jak & Daxter, Front: Original left, Cinematic right](jak2/jak-front.jpg)
 
 **Left**
 
-![Jak & Daxter, Left: Original left, Cinematic right](jak2/jak-left.webp)
+![Jak & Daxter, Left: Original left, Cinematic right](jak2/jak-left.jpg)
 
 **Right**
 
-![Jak & Daxter, Right: Original left, Cinematic right](jak2/jak-right.webp)
+![Jak & Daxter, Right: Original left, Cinematic right](jak2/jak-right.jpg)
 
 **Back**
 
-![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.webp)
+![Jak & Daxter, Back: Original left, Cinematic right](jak2/jak-back.jpg)
 
 **Jak’s frown**
 
-![Jak’s frown. Original left, Cinematic right.](jak2/expressions/jak-frown.webp)
+![Jak’s frown. Original left, Cinematic right.](jak2/expressions/jak-frown.jpg)
 
 **Jak’s shout**
 
-![Jak’s shout. Original left, Cinematic right.](jak2/expressions/jak-shout.webp)
+![Jak’s shout. Original left, Cinematic right.](jak2/expressions/jak-shout.jpg)
 
 **Daxter’s side grin**
 
-![Daxter’s side grin. Original left, Cinematic right.](jak2/expressions/daxter-side-grin.webp)
+![Daxter’s side grin. Original left, Cinematic right.](jak2/expressions/daxter-side-grin.jpg)
 
 ## Dark Jak & Daxter
 
@@ -40,37 +40,37 @@ Dark Jak keeps his original gameplay horns.
 
 **Front**
 
-![Dark Jak & Daxter, Front: Original left, Cinematic right](jak2/darkjak-front.webp)
+![Dark Jak & Daxter, Front: Original left, Cinematic right](jak2/darkjak-front.jpg)
 
 **Left**
 
-![Dark Jak & Daxter, Left: Original left, Cinematic right](jak2/darkjak-left.webp)
+![Dark Jak & Daxter, Left: Original left, Cinematic right](jak2/darkjak-left.jpg)
 
 **Right**
 
-![Dark Jak & Daxter, Right: Original left, Cinematic right](jak2/darkjak-right.webp)
+![Dark Jak & Daxter, Right: Original left, Cinematic right](jak2/darkjak-right.jpg)
 
 **Back**
 
-![Dark Jak & Daxter, Back: Original left, Cinematic right](jak2/darkjak-back.webp)
+![Dark Jak & Daxter, Back: Original left, Cinematic right](jak2/darkjak-back.jpg)
 
 **Daxter’s Dark Jak grimace**
 
-![Daxter’s Dark Jak grimace. Original left, Cinematic right.](jak2/expressions/daxter-dark-jak.webp)
+![Daxter’s Dark Jak grimace. Original left, Cinematic right.](jak2/expressions/daxter-dark-jak.jpg)
 
 ## Sig
 
 **Front**
 
-![Sig, Front: Original left, Cinematic right](jak2/sig-front.webp)
+![Sig, Front: Original left, Cinematic right](jak2/sig-front.jpg)
 
 **Right**
 
-![Sig, Right: Original left, Cinematic right](jak2/sig-right.webp)
+![Sig, Right: Original left, Cinematic right](jak2/sig-right.jpg)
 
 **Back**
 
-![Sig, Back: Original left, Cinematic right](jak2/sig-back.webp)
+![Sig, Back: Original left, Cinematic right](jak2/sig-back.jpg)
 
 ## Ashelin
 
@@ -86,19 +86,19 @@ Dark Jak keeps his original gameplay horns.
 
 **Front**
 
-![Samos, Front: Original left, Cinematic right](jak2/samos-front.webp)
+![Samos, Front: Original left, Cinematic right](jak2/samos-front.jpg)
 
 **Left**
 
-![Samos, Left: Original left, Cinematic right](jak2/samos-left.webp)
+![Samos, Left: Original left, Cinematic right](jak2/samos-left.jpg)
 
 **Right**
 
-![Samos, Right: Original left, Cinematic right](jak2/samos-right.webp)
+![Samos, Right: Original left, Cinematic right](jak2/samos-right.jpg)
 
 **Back**
 
-![Samos, Back: Original left, Cinematic right](jak2/samos-back.webp)
+![Samos, Back: Original left, Cinematic right](jak2/samos-back.jpg)
 
 ## Keira
 
