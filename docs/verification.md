@@ -1,6 +1,10 @@
 # Jak II verification
 
-Release `0.3.7` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+Release `0.3.9` targets Windows x64, [Apple Silicon macOS](macos.md) and [experimental Linux x64](linux.md) with official OpenGOAL **v0.3.9**. The launcher protocol was checked with **v2.11.2**. Intel Macs are unsupported. Real Linux launcher import, model conversion and gameplay are not yet validated.
+
+## Daxter’s eyes and mouth
+
+On Windows PAL, both eyes were checked through crouch, Peace Maker aim, firing, release, changes in gaze and full blinks. The tongue and lower teeth were checked in the Tomb’s wide-open shout. [In-game comparisons](comparisons/jak2.md#jak--daxter)
 
 ## Refreshed HUD
 

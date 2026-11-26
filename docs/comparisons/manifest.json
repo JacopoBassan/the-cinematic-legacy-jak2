@@ -1091,6 +1091,174 @@
             "commit": "741a9a694fca273e919507118c75a84e0774ac18",
             "sha256": "bc5c687ff825d7a9b5e39f617b6b483dd77159a5139c06edf0fec3ab0e969d7f"
           }
+        },
+        {
+          "subject": "Daxter",
+          "view": "Daxter while Jak aims the Peace Maker",
+          "path": "jak2/expressions/daxter-peace-maker-aim.jpg",
+          "dimensions": [
+            1028,
+            438
+          ],
+          "sha256": "75c05a9a1e77cb97ad2c80b176d30e5660afd6ecc777c43d56bb812ad95ec0e6",
+          "bytes": 192597,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              765,
+              290,
+              1275,
+              690
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "267a8bb6f432c05ba8c0226be83a7d921195d32194e8a410fabdff66e8a2bc4a",
+              "cinematic": "51df831d44d8d782f16b0e159ee17f63aac25a4a8abacaee39f5322b4aa39003"
+            },
+            "outputEncoding": {
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
+            },
+            "outputLayout": {
+              "header": 38,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "scene": "Haven Forest",
+            "nativeFrame": 1.875,
+            "clip": "daxter-gun-stance-dark",
+            "timeOfDay": "21:00",
+            "view": "left-30-aim-late",
+            "matchingHeadCameraGazeAndMorphs": true
+          },
+          "captureBuild": {
+            "version": "0.3.9",
+            "platform": "windows-x64",
+            "openGoalVersion": "v0.3.9",
+            "cinematicGameFr3Sha256": "8c66451fb89b7acc3ca5751f91a121b6334532d68387fab8672923d1b16144d9"
+          }
+        },
+        {
+          "subject": "Daxter",
+          "view": "Daxter crouching",
+          "path": "jak2/expressions/daxter-crouch.jpg",
+          "dimensions": [
+            948,
+            408
+          ],
+          "sha256": "2b9e7a08b2daaced092ea14935c67da897486d43d8c2480dd7ceedbfc0a0658c",
+          "bytes": 148901,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              640,
+              280,
+              1110,
+              650
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "3a78ef35a10a7b22a5ae786bac702187637e41ad74736570640a025c7dbe44f3",
+              "cinematic": "bb34fed4a520452d3d601c7a648a58a230ce5e0f73987396a6098f264c783850"
+            },
+            "outputEncoding": {
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
+            },
+            "outputLayout": {
+              "header": 38,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "scene": "Haven Forest",
+            "nativeFrame": 2.75,
+            "clip": "daxter-duck-stance",
+            "timeOfDay": "21:00",
+            "view": "right-58-crouch-hold",
+            "matchingHeadCameraGazeAndMorphs": true
+          },
+          "captureBuild": {
+            "version": "0.3.9",
+            "platform": "windows-x64",
+            "openGoalVersion": "v0.3.9",
+            "cinematicGameFr3Sha256": "8c66451fb89b7acc3ca5751f91a121b6334532d68387fab8672923d1b16144d9"
+          }
+        },
+        {
+          "subject": "Daxter",
+          "view": "Daxter’s shout in the Tomb",
+          "path": "jak2/expressions/daxter-tomb-shout.jpg",
+          "dimensions": [
+            1228,
+            903
+          ],
+          "sha256": "23efa9b9c22d613c7e5c8e3c293f7c93fdee1a8b1505f7ebaaaf93540784dd81",
+          "bytes": 315851,
+          "framing": {
+            "sourceDimensions": [
+              1920,
+              1080
+            ],
+            "sharedCrop": [
+              665,
+              0,
+              1275,
+              865
+            ],
+            "sourceImagesResized": false,
+            "sourcePixelEdits": false,
+            "sourceCaptureSha256": {
+              "original": "c497b1815fb24fd2f503d51c3f41a8703d49d85d4b711b89f95fd8876a0b6e7c",
+              "cinematic": "f9f8ae6810dc050036dd11b0f276e79fcb0a0b0d6be932a1b7981a8072cadc4c"
+            },
+            "outputEncoding": {
+              "format": "JPEG",
+              "quality": 94,
+              "subsampling": 0,
+              "progressive": true,
+              "optimize": true,
+              "lossless": false
+            },
+            "outputLayout": {
+              "header": 38,
+              "gap": 8,
+              "margin": 0
+            }
+          },
+          "matchedCapture": {
+            "scene": "Tomb",
+            "clip": "daxter-indax-death-fall",
+            "nativeFrame": 8.0,
+            "matchedNativeWeights": true,
+            "headRelativeCameraOffsetMM": 0.0469,
+            "headRelativeCameraAxisDifferenceDegrees": 0.00255
+          },
+          "captureBuild": {
+            "version": "0.3.9",
+            "platform": "windows-x64",
+            "openGoalVersion": "v0.3.9",
+            "cinematicGameFr3Sha256": "8c66451fb89b7acc3ca5751f91a121b6334532d68387fab8672923d1b16144d9"
+          }
         }
       ]
     }

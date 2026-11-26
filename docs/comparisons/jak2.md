@@ -34,6 +34,18 @@ Original left, Cinematic right. In-game screenshots.
 
 ![Daxter’s side grin. Original left, Cinematic right.](jak2/expressions/daxter-side-grin.jpg)
 
+**Daxter while Jak aims the Peace Maker**
+
+![Daxter while Jak aims the Peace Maker. Original left, Cinematic right.](jak2/expressions/daxter-peace-maker-aim.jpg)
+
+**Daxter crouching**
+
+![Daxter crouching. Original left, Cinematic right.](jak2/expressions/daxter-crouch.jpg)
+
+**Daxter’s shout in the Tomb**
+
+![Daxter’s shout in the Tomb. Original left, Cinematic right.](jak2/expressions/daxter-tomb-shout.jpg)
+
 ## Dark Jak & Daxter
 
 Dark Jak keeps his original gameplay horns.
