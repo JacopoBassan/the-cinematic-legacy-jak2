@@ -4,6 +4,7 @@
   "displayName": "Jak II: The Cinematic Legacy",
   "description": "Cinematic character models in Jak II gameplay",
   "repository": "JacopoBassan/the-cinematic-legacy-jak2",
-  "version": "0.3.8",
-  "openGoalVersion": "v0.3.9"
+  "version": "0.3.9",
+  "openGoalVersion": "v0.3.9",
+  "releaseNotes": "Daxter’s eyes now fill the lower and outer sockets while crouching, aiming and firing. His tongue and lower teeth follow the open jaw during wide shouts."
 }

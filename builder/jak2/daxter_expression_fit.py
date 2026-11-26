@@ -24,6 +24,23 @@ def lower_tooth_row(primitive, accessor, points):
     return used[rows[vertices]==lower]
 
 
+def seat_shout_lower_arch(points, lower_row, motion):
+    """Keep the lower dental strip between the inner floor and the outer chin."""
+    row = points[lower_row]
+    x, y = row[:, 0], row[:, 1]
+    # Millimetres at the center, mid-arch and corner. The two edges follow
+    # different arcs as the open jaw turns. The centerline stays symmetric.
+    stations = (0., .055, .110)
+    bottom = np.array([[0., 20.67, 4.816], [-10.44, 20.67, 8.092], [0., 20.67, 16.555]])
+    top = np.array([[0., 2.4, 16.555], [-2.436, -6.69, 11.186], [-11.89, -4.71, -5.194]])
+    level = ((y - y.min()) / np.ptp(y))[:, None]
+    def across(samples):
+        return np.column_stack([np.interp(abs(x), stations, axis) for axis in samples.T])
+    correction = (1. - level) * across(bottom) + level * across(top)
+    correction[:, 0] *= np.sign(x)
+    motion[lower_row] += correction * .001
+
+
 def fit_mouth(primitives, accessor, deformations, donor_shape, poses, shout, *, rise_scale=None):
     """Keep cohesive donor lip and dental rows at the native expression weights."""
     for part in (4, 5, 6, 15):
@@ -60,8 +77,46 @@ def fit_mouth(primitives, accessor, deformations, donor_shape, poses, shout, *, 
                 # would otherwise poke through the descending jaw.
                 position_delta[lower_row, 0] -= .35*(points[lower_row, 0]+position_delta[lower_row, 0])
                 position_delta[lower_row, 2] -= .012
+                seat_shout_lower_arch(points, lower_row, position_delta)
             positions[channel] += mouth[:, None]*(position_delta/weight-positions[channel])
             normals[channel] += mouth[:, None]*(normal_delta/weight-normals[channel])
+
+
+def fit_shout_tongue(primitive, accessor, deformation, donor, read_donor):
+    """Carry the authored tongue skin with the floor during Daxter's gameplay shout."""
+    source = donor['meshes'][0]['primitives'][6]
+    used = np.unique(read_donor(source['indices']))
+    attributes = source['attributes']
+    points = accessor(primitive['attributes']['POSITION'])
+    assert np.array_equal(points, read_donor(attributes['POSITION'])[used])
+    names = [donor['nodes'][node]['name'] for node in donor['skins'][0]['joints']]
+    tongue_joints = [i for i, name in enumerate(names) if name.startswith('tongue')]
+    joints = read_donor(attributes['JOINTS_0'])[used]
+    weights = read_donor(attributes['WEIGHTS_0'])[used]
+    tongue = np.where(np.isin(joints, tongue_joints), weights, 0.).sum(axis=1)
+    uvula = np.where(joints == names.index('uvula'), weights, 0.).sum(axis=1)
+
+    # The low rig has no tongue chain. Fit the moving center of the oral floor
+    # beneath the donor tongue in the head's sagittal plane.
+    normals = accessor(primitive['attributes']['NORMAL'])
+    positions, normal_deltas = deformation
+    shout = 1
+    x, y, z = points.T
+    floor = ((tongue < .001) & (uvula < .001) & (normals[:, 1] > .65)
+             & (abs(x) < .040) & (y < 1.040) & (z > .035) & (z < .135)
+             & (positions[shout, :, 1] < -.010))
+    anchor = np.flatnonzero(floor)
+    _, unique = np.unique(points[anchor].round(6), axis=0, return_index=True)
+    anchor = anchor[unique]
+    assert tongue.max() > .99 and len(anchor) >= 8
+    rest = points[anchor, 1:]
+    posed = rest + positions[shout, anchor, 1:]
+    u, _, vt = np.linalg.svd((rest - rest.mean(0)).T @ (posed - posed.mean(0)))
+    rotation = u @ vt
+    assert np.linalg.det(rotation) > .999
+    driven = (points[:, 1:] - rest.mean(0)) @ rotation + posed.mean(0)
+    positions[shout, :, 1:] += tongue[:, None] * (driven - points[:, 1:])
+    normal_deltas[shout, :, 1:] += tongue[:, None] * (normals[:, 1:] @ rotation - normals[:, 1:])
 
 
 def fit_tall_eyes(native_eyes, native_accessor, primitives, accessor, deformations, channels):
@@ -121,14 +176,102 @@ def fit_tall_eyes(native_eyes, native_accessor, primitives, accessor, deformatio
                 lateral += influence*(lean-lateral)
 
 
+def open_contour(primitive, accessor):
+    """Find open mesh edges after welding the donor's UV and normal seams."""
+    points = accessor(primitive['attributes']['POSITION'])
+    used, indices = np.unique(accessor(primitive['indices']), return_inverse=True)
+    _, first, welded = np.unique(points[used].round(6), axis=0,
+                                 return_index=True, return_inverse=True)
+    triangles = np.sort(welded[indices].reshape(-1, 3), axis=1)
+    triangles = triangles[np.all(np.diff(triangles, axis=1) > 0, axis=1)]
+    edges = np.concatenate([triangles[:, [0, 1]], triangles[:, [1, 2]], triangles[:, [0, 2]]])
+    edges, counts = np.unique(edges, axis=0, return_counts=True)
+    return used[first[np.unique(edges[counts == 1])]]
+
+
+def fit_squint_edge(points, edge, rim, rim_motion, motion):
+    """Seat the nasal and lower perimeter of the cap during a squint."""
+    # The central cap follows the brow back, but at its nasal perimeter
+    # that same setback opens a sightline through the socket in profile.
+    # Preserve the neutral underlap by sharing the local fur movement.
+    radius = abs(points[:, 0])
+    edge_radius = abs(edge[:, 0])
+    nasal = (radius-edge_radius.min()) / np.ptp(edge_radius)
+    distance = np.linalg.norm(points[:, None]-edge, axis=2).min(axis=1)
+    perimeter = 1-smoothstep(distance/.006)
+    influence = perimeter * (1-smoothstep((nasal-.12)/.40))
+    distance_squared = np.sum((points[:, None]-rim)**2, axis=2)
+    weights = 1/(distance_squared + .005**2)**2
+    local_motion = weights @ rim_motion / weights.sum(axis=1)[:, None]
+    correction = influence[:, None]*(local_motion-motion)
+    # In the firing pose the opening also extends below the cap's lower
+    # arc. Underlap that lip vertically without advancing the eye surface.
+    floor = smoothstep((1.106-points[:, 1])/.015)
+    correction[:, 1] -= .016*perimeter*floor
+    return correction
+
+
 def compress_closed_caps(primitives, accessor, deformations, channel, weight, fraction):
-    """Reduce the exposed white to the native squint without changing eye UVs."""
+    """Reduce the exposed white in a squint while keeping its lower edge seated."""
+    fur = primitives[6]
+    fur_edges = open_contour(fur, accessor)
+    fur_points = accessor(fur['attributes']['POSITION'])
+    fur_motion = deformations[6][0][channel]
     for part in (13, 14):
         primitive = primitives[part]
         used = np.unique(accessor(primitive['indices']))
         motion = deformations[part][0][channel]
-        y = accessor(primitive['attributes']['POSITION'])[used, 1] + weight*motion[used, 1]
-        motion[used, 1] -= fraction*(y-y.mean())/weight
+        points = accessor(primitive['attributes']['POSITION'])[used]
+        neutral_y = points[:, 1]
+        posed_y = neutral_y + weight*motion[used, 1]
+        compression = fraction*(posed_y-posed_y.mean())
+        compressed_y = posed_y-compression
+        # The fur opening compresses from above. Its lower edge stays put
+        # during Daxter's crouch and gun poses, so lifting the eye's lower
+        # rows with the squint exposes the inside of the socket.
+        lift = max(0., compressed_y.min()-neutral_y.min())
+        lower = np.maximum(0., compressed_y.mean()-compressed_y)
+        height = np.ptp(compressed_y)
+        if height > 0 and lift > 0:
+            lower_weight = smoothstep(lower/(.28*height))
+            seating = lift*(lower/lower.max())*lower_weight
+            seated_y = compressed_y-seating
+            # Retain some underlap at the inner lower corner, where the
+            # depth setback exposes the socket in the aiming side view.
+            radius = np.abs(points[:, 0]+weight*motion[used, 0])
+            width = np.ptp(radius)
+            near_nose = smoothstep((radius.min()+.75*width-radius)/(.64*width))
+            corner = near_nose*smoothstep((seated_y.mean()-seated_y)/(.25*np.ptp(seated_y)))
+            compression += seating+.012*corner
+            fitted_y = seated_y-.012*corner
+            lateral = points[:, 0] + weight*motion[used, 0]
+            x_from_center = (lateral-lateral.mean()) / width
+            y_from_center = (fitted_y.mean()-fitted_y) / np.ptp(fitted_y)
+            edge = smoothstep((np.hypot(x_from_center,y_from_center)-.22)/.33)
+            bottom = smoothstep((y_from_center+.05)/.41)
+            outer = smoothstep((abs(x_from_center)-.13)/.27)
+            # Carry the lower and side edges forward where the squint still
+            # leaves the cap behind the rim in profile. The pupil region and
+            # upper fold retain the existing setback.
+            profile = edge*np.maximum(bottom,.8*outer)
+            motion[used, 2] += (.016*corner+.009*profile)/weight
+        motion[used, 1] -= compression/weight
+        edge = accessor(primitive['attributes']['POSITION'])[open_contour(primitive, accessor)]
+        # Both sides have a single open fur loop next to the cap.
+        distance = np.linalg.norm(fur_points[fur_edges, None]-edge, axis=2).min(axis=1)
+        rim = fur_edges[distance < .025]
+        assert len(rim) == 22, 'Unexpected cinematic Daxter socket contour'
+        motion[used] += fit_squint_edge(points, edge, fur_points[rim], fur_motion[rim], motion[used])
+        if part == 14:
+            # During held aim a sightline opens past the nasal end of this
+            # eye's bottom edge. Extend that single welded point along the
+            # lower rim on the squint control, including any seam duplicates.
+            bottom = edge[edge[:, 1] <= edge[:, 1].min() + .0001]
+            nasal_end = bottom[np.argmin(abs(bottom[:, 0]))]
+            at_end = np.linalg.norm(points - nasal_end, axis=1) < 1e-6
+            motion[used[at_end], 0] += .008
+            motion[used[at_end], 1] += .006
+
 
 def cap_midpoints(points, indices):
     """Sample the center of the eye silhouette at matching vertical fractions."""

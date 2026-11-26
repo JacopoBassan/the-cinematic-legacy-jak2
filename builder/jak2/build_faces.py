@@ -595,6 +595,9 @@ def main():
         if name == 'daxter-lod0':
             fit_daxter_shout_lids(lp, la, hp, ha, low_eyes, deformations)
             fit_daxter_poses(lp, la, hp, ha, low_eyes, deformations)
+            from daxter_expression_fit import fit_shout_tongue
+            donor, read_donor = glb(models/'hiphog/daxter-highres-lod0.glb')
+            fit_shout_tongue(hp[6], ha, deformations[6], donor, read_donor)
         else:
             fit_jak_open_mouth(hp, ha, deformations)
             fit_jak_dental_expressions(hp, ha, deformations)
